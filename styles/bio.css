@@ -2,4 +2,21 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background: yellow;
+}
+@media only screen and (max-width: 680px) {
+  body {
+    background: lightblue;
+  }
+}
+@media only screen and (max-width: 481px) {
+  body {
+    background: aquamarine;
+  }
+  body h1 {
+    color: red;
+  }
 }/*# sourceMappingURL=bio.css.map */
