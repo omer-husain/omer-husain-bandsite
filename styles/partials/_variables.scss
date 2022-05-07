@@ -1,3 +1,25 @@
-$break-mobile: 320px;
-$break-tablet: 320px;
-$break-desktop: 1200px;
+//responsive breaks - min-widths
+    // $break-mobile: 320px; reference only
+$break-tablet: 768px;
+$break-desktop: 1280px;
+
+
+
+$margin-mobile-LR: 16px;
+$margin-tablet-LR: 36px;
+$margin-desktop-LR: 36px;
+
+
+$margin-mobile-between-components: 16px;
+$margin-tablet-between-components: 36px;
+
+
+
+$margin-top-headline-mobile: 24px;
+$margin-bottom-headline-mobile: 16px;
+
+$margin-top-headline-tablet: 48px;
+$margin-bottom-headline-tablet: 36px;
+
+
+

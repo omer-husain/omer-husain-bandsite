@@ -11,16 +11,21 @@
   <body>
     <nav class="nav">
       <p class="nav__logo">BANDSITE</p>
-      <a class="nav__link nav__link--active" href="">Biography</a>
-      <a class="nav__link" href="">Shows</a>
+      <ul class="nav__list">
+        <li class="nav__link nav__link--active"><a  href="">Biography</a></li>
+        <li class="nav__link"><a  href="">Shows</a></li>
+      </ul>
     </nav>
     <main>
       <section class="hero">
+        
+        <p class="hero__overlay">
+          <h1 class="hero__heading">The Bees Knees</h1>
+        </p>
         <img class="hero__image" src="./assets/images/hero-bio.jpg" alt="" />
-        <p class="hero__heading">The Bees Knees</p>
       </section>
       <section class="about-musicians">
-        <h2 class="about-musicians__heading"></h2>
+        <h2 class="about-musicians__heading">About the Musicians</h2>
         <img
           class="about-musicians__image"
           src="./assets/images/band.jpg"
@@ -56,7 +61,7 @@
           2021.
         </p>
       </section>
-      <section class="photo-gallary">
+      <section class="photo-gallery">
         <h2 class="photo-gallery__heading">Photo Gallery</h2>
         <img
           class="photo-gallery__image"
@@ -107,9 +112,11 @@
     </main>
     <footer class="footer">
       <h3 class="footer__header">Get in Touch</h3>
-      <img class="footer__social-icon" src="" alt="" />
-      <img class="footer__social-icon" src="" alt="" />
-      <img class="footer__social-icon" src="" alt="" />
+      <section class="footer__icon-list">
+        <img class="footer__social-icon" src="./assets/icons/SVG/Icon-instagram.svg" alt="" />
+        <img class="footer__social-icon" src="./assets/icons/SVG/Icon-facebook.svg" alt="" />
+        <img class="footer__social-icon" src="./assets/icons/SVG/Icon-twitter.svg" alt="" />
+      </section>
       <p class="footer__contact-name">Cam Adams</p>
       <p class="footer__contact-company">The Bees Knees Management</p>
       <p class="footer__contact-address">
