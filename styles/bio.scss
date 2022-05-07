@@ -92,7 +92,7 @@ body {
     font-weight: 700;
     color: white;
     position: absolute;
-    z-index: 0; 
+    z-index: 0;
   }
 
   &__image {
@@ -106,7 +106,6 @@ body {
 
 .about-musicians {
   padding: 0 variables.$margin-mobile-LR;
-  
 
   &__heading {
     font-size: map.get(m.$section-header, "text-size");
@@ -118,9 +117,26 @@ body {
 
   &__image {
     width: 100%;
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+  }
+
+  &__quote {
+    font-weight: 700;
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+  }
+
+  &__sub-heading {
+    font-size: map.get(m.$section-subheader, "text-size");
+    line-height: map.get(m.$section-subheader, "line-height");
+    font-weight: map.get(m.$section-subheader, "text-weight");
+    margin-bottom: variables.$margin-bottom-headline-mobile;
   }
 
   &__biography-paragraph {
+    font-size: map.get(m.$body-copy, "text-size");
+    line-height: map.get(m.$body-copy, "line-height");
+    font-weight: map.get(m.$body-copy, "text-weight");
+    margin-bottom: variables.$margin-bottom-headline-mobile;
   }
 }
 
@@ -133,6 +149,7 @@ body {
     font-weight: map.get(m.$section-header, "text-weight");
     margin-top: variables.$margin-top-headline-mobile;
     margin-bottom: variables.$margin-bottom-headline-mobile;
+    padding-top: variables.$margin-top-headline-mobile;
   }
 
   &__image {
@@ -146,6 +163,10 @@ body {
   background-color: colours.$BandSite-Black;
   color: colours.$White;
 
+  font-size: map.get(m.$footer-copy, "text-size");
+  line-height: map.get(m.$footer-copy, "line-height");
+  font-weight: map.get(m.$footer-copy, "text-weight");
+
   &__header {
     font-size: map.get(m.$section-header, "text-size");
     line-height: map.get(m.$section-header, "line-height");
@@ -154,16 +175,44 @@ body {
     margin-bottom: variables.$margin-bottom-headline-mobile;
   }
 
-  &__icon-list{
+  &__icon-list {
     display: flex;
     flex-direction: row;
-    justify-content:flex-start;
+    justify-content: flex-start;
     margin-bottom: variables.$margin-mobile-between-components;
   }
 
-  &__social-icon{
+  &__social-icon {
     width: 1.8rem;
     height: 2rem;
     margin: 0 2rem 0 0;
+  }
+
+  &__contact-name {
+    margin-top: variables.$margin-mobile-between-components;
+    font-weight: 700;
+  }
+
+  &__contact-company {
+    font-weight: 700;
+    margin-bottom: variables.$margin-mobile-between-components;
+  }
+
+  &__contact-email{
+    margin: variables.$margin-mobile-between-components 0;
+  }
+
+  &__logo{
+    // padding: 0.5rem;
+    margin-top: 3rem;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  &__copyright{
+    margin: variables.$margin-mobile-between-components 0;
+
   }
 }
