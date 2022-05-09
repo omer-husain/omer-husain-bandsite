@@ -1,25 +1,21 @@
 //responsive breaks - min-widths
-$break-mobile: 200px;
-$break-tablet: 768px;
-$break-desktop: 1280px;
+$break-mobile: 6.25rem;
+$break-tablet: 48rem;
+$break-desktop: 80rem;
 
+$margin-mobile-LR: 1rem;
+$margin-tablet-LR: 2.25rem;
+$margin-desktop-LR: 2.25rem;
 
+$margin-mobile-between-components: 1rem;
+$margin-tablet-between-components: 2.25rem;
+$margin-desktop-between-components: 2.25rem;
 
-$margin-mobile-LR: 16px;
-$margin-tablet-LR: 36px;
-$margin-desktop-LR: 36px;
+$margin-top-headline-mobile: 1.5rem;
+$margin-bottom-headline-mobile: 1rem;
 
+$margin-top-headline-tablet: 3rem;
+$margin-bottom-headline-tablet: 2.25rem;
 
-$margin-mobile-between-components: 16px;
-$margin-tablet-between-components: 36px;
-
-
-
-$margin-top-headline-mobile: 24px;
-$margin-bottom-headline-mobile: 16px;
-
-$margin-top-headline-tablet: 48px;
-$margin-bottom-headline-tablet: 36px;
-
-
-
+$margin-top-headline-desktop: 3rem;
+$margin-bottom-headline-desktop: 2.25rem;
