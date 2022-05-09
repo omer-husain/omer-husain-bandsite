@@ -112,14 +112,18 @@ body {
     font-weight: 700;
     color: white;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
+  }
+  body .hero__overlay {
+    background-color: #323232;
   }
   body .hero__image {
-    z-index: -1;
+    z-index: -2;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     height: 100%;
+    opacity: 50%;
   }
   body .about-musicians {
     padding: 0 1rem;
@@ -296,14 +300,18 @@ body {
     font-weight: 700;
     color: white;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
+  }
+  body .hero__overlay {
+    background-color: #323232;
   }
   body .hero__image {
-    z-index: -1;
+    z-index: -2;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     height: 100%;
+    opacity: 50%;
   }
   body .about-musicians {
     padding: 0 5.625rem;
@@ -509,19 +517,23 @@ body {
     font-weight: 700;
     color: white;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
+  }
+  body .hero__overlay {
+    background-color: #323232;
   }
   body .hero__image {
-    z-index: -1;
+    z-index: -2;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     height: 100%;
+    opacity: 50%;
   }
-  body .about-musicians {
+  body .hero .about-musicians {
     padding: 0 11.25rem;
   }
-  body .about-musicians__heading {
+  body .hero .about-musicians__heading {
     padding: 0 2.25rem;
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -529,37 +541,37 @@ body {
     margin-top: 3rem;
     margin-bottom: 2.25rem;
   }
-  body .about-musicians__image {
+  body .hero .about-musicians__image {
     width: 100%;
     margin-bottom: 2.25rem;
   }
-  body .about-musicians__quote {
+  body .hero .about-musicians__quote {
     font-weight: 700;
     margin-bottom: 2.25rem;
   }
-  body .about-musicians__sub-heading {
+  body .hero .about-musicians__sub-heading {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
     margin-bottom: 2.25rem;
   }
-  body .about-musicians__copy {
+  body .hero .about-musicians__copy {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  body .about-musicians__biography-paragraph {
+  body .hero .about-musicians__biography-paragraph {
     width: 48%;
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 400;
     margin-bottom: 2.25rem;
   }
-  body .photo-gallery {
+  body .hero .photo-gallery {
     padding: 0 2.25rem;
     background-color: #fafafa;
   }
-  body .photo-gallery__heading {
+  body .hero .photo-gallery__heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
@@ -567,17 +579,17 @@ body {
     margin-bottom: 2.25rem;
     padding-top: 3rem;
   }
-  body .photo-gallery__image-container {
+  body .hero .photo-gallery__image-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  body .photo-gallery__image {
+  body .hero .photo-gallery__image {
     width: 30%;
     margin: 1.2vw;
   }
-  body .footer {
+  body .hero .footer {
     position: relative;
     padding: 0 2.25rem;
     background-color: #323232;
@@ -586,48 +598,48 @@ body {
     line-height: 1.25rem;
     font-weight: 400;
   }
-  body .footer__line-break {
+  body .hero .footer__line-break {
     white-space: pre-line;
   }
-  body .footer__header {
+  body .hero .footer__header {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
     margin-top: 3rem;
     margin-bottom: 2.25rem;
   }
-  body .footer__row {
+  body .hero .footer__row {
     width: 100%;
     display: flex;
   }
-  body .footer__contact-card {
+  body .hero .footer__contact-card {
     width: 15%;
     margin: 0 3vw;
   }
-  body .footer__icon-list {
+  body .hero .footer__icon-list {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     margin: 0 2rem;
   }
-  body .footer__social-icon {
+  body .hero .footer__social-icon {
     width: 1.8rem;
     height: 2rem;
     margin: 0 2rem 0 0;
   }
-  body .footer__contact-name {
+  body .hero .footer__contact-name {
     margin-top: 2.25rem;
     font-weight: 700;
   }
-  body .footer__contact-company {
+  body .hero .footer__contact-company {
     font-weight: 700;
     margin-bottom: 2.25rem;
   }
-  body .footer__contact-email {
+  body .hero .footer__contact-email {
     margin: 2.25rem 0;
   }
-  body .footer__logo {
+  body .hero .footer__logo {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 500;
@@ -636,7 +648,7 @@ body {
     top: 0%;
     left: calc(100% - 12rem);
   }
-  body .footer__copyright {
+  body .hero .footer__copyright {
     margin: 2.25rem 0;
   }
 }/*# sourceMappingURL=bio.css.map */
