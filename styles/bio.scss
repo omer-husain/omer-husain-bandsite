@@ -8,7 +8,6 @@ body {
   font-family: fonts.$font-name;
   min-width: 100%;
   min-height: 100vh;
-  border: 2px solid red;
 
   @include mixins.devices(mobile) {
     //code for mobile

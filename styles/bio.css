@@ -31,9 +31,24 @@ body {
   font-family: "AvenirNext LT Pro";
   min-width: 100%;
   min-height: 100vh;
-  border: 2px solid red;
 }
 @media only screen and (min-width: 6.25rem) {
+  body a:link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body a:visited {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body a:hover {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body a:active {
+    text-decoration: none;
+    color: #ffffff;
+  }
   body .nav {
     background-color: #323232;
     color: #ffffff;
@@ -201,6 +216,22 @@ body {
   }
 }
 @media only screen and (min-width: 48rem) {
+  body a:link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body a:visited {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body a:hover {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body a:active {
+    text-decoration: none;
+    color: #ffffff;
+  }
   body .nav {
     background-color: #323232;
     color: #ffffff;
@@ -278,6 +309,7 @@ body {
     padding: 0 5.625rem;
   }
   body .about-musicians__heading {
+    padding: 0 2.25rem;
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
@@ -397,6 +429,22 @@ body {
   }
 }
 @media only screen and (min-width: 80rem) {
+  body a:link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body a:visited {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body a:hover {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body a:active {
+    text-decoration: none;
+    color: #ffffff;
+  }
   body .nav {
     background-color: #323232;
     color: #ffffff;
@@ -474,6 +522,7 @@ body {
     padding: 0 11.25rem;
   }
   body .about-musicians__heading {
+    padding: 0 2.25rem;
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
