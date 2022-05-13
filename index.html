@@ -120,24 +120,35 @@
         </section>
         <section class="comments">
           <h2 class="comments__heading">Join the Conversation</h2>
-          <img class="comments__avatar" src="./assets/images/Mohan-muruge.jpg" alt="">
           
           
-          <form class="comments__form" action="">
+          <section class="comments__form-container">
+
+            <section class="comments__col1-image">
+              <img class="comments__avatar" src="./assets/images/Mohan-muruge.jpg" alt="">
+            </section>
             
-            <label class="comments__label" for="name">NAME</label>
-            <input class="comments__input-text" type="text" id="name">
-
-            <label class="comments__label" for="textarea">COMMENT</label>
-            <textarea class="comments__comment-area" id="textarea"></textarea>
-            <button class="comments__button">Comment</button>
-          </form>
-
+            <form class="comments__col2-form" action="">
+            
+              <label class="comments__form-label" for="name">NAME</label>
+              <input class="comments__input-name" type="text" id="name" placeholder="Enter your name" >
+  
+              <label class="comments__form-label" for="textarea">COMMENT</label>
+              <textarea class="comments__comment-area" id="textarea" placeholder="Add a new comment"></textarea>
+              <button class="comments__button">Comment</button>
+            </form>
+  
+          </section>
+          
+          
+                    
+          
+          
       
         </section>
 
         <section class="submitted-comments">
-
+             
           
         </section>
       </section>

@@ -1,5 +1,5 @@
 const connorWalton = {
-  __id: 001,
+    __id: 001,
   firstName: "Connor",
   lastName: "Walton",
   avatarImageSrc: "",
@@ -8,7 +8,7 @@ const connorWalton = {
       __id: 1001,
 
       //months in date object start from 0
-      dateAdded: new Date(2021, 02-1, 17),
+      dateAdded: new Date(2021, 02 - 1, 17),
       text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
     },
   ],
@@ -46,22 +46,24 @@ const userList = [connorWalton, emilieBeach, milesAcosta];
 
 let commentsSection = document.querySelector(".submitted-comments");
 
-
-
 const displayComments = (users) => {
   for (let user of users) {
     console.log(`${user.firstName} ${user.lastName}`);
-    commentsSection.innerHTML += (`${user.firstName} ${user.lastName} `); 
+    commentsSection.innerHTML += `${user.firstName} ${user.lastName} `;
 
     for (let comment of user.comments) {
       console.log(comment.dateAdded.toLocaleDateString());
-      commentsSection.innerHTML += (`${comment.dateAdded.toLocaleDateString()} 
-      ${comment.text} `);
+      commentsSection.innerHTML += `${comment.dateAdded.toLocaleDateString()} 
+      ${comment.text} `;
       console.log(comment.text);
     }
 
     commentsSection.innerHTML += "<br><br>";
   }
 };
+
+submitComments(payload){
+  userList.push(payload);
+}
 
 displayComments(userList);
