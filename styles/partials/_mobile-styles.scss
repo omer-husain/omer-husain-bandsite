@@ -168,7 +168,7 @@
     }
   }
 
-  .comments {
+  .write-comments {
     padding: 0 variables.$margin-mobile-LR;
     background-color: colours.$White;
 
@@ -245,6 +245,39 @@
       &:hover {
         background-color: colours.$BandSite-DarkBlack;
       }
+    }
+  }
+
+  .display-comments {
+    padding: 0 variables.$margin-mobile-LR;
+    background-color: colours.$White;
+
+    &__card {
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid colours.$Mercury;
+      justify-content: space-between;
+    }
+
+    &__card-col1 {
+      width: 20%;
+    }
+
+    &__avatar {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    &__card-col2 {
+      width: 75%;
+    }
+
+    &__heading-row {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__card-header {
+      display: inline-block;
     }
   }
 
