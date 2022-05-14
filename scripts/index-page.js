@@ -20,6 +20,11 @@ let comments = [
     dateAdded: new Date(2020, 12 - 1, 20),
     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
   },
+  {
+    fullName: "Happy Boy",
+    dateAdded: new Date(),
+    text: "I'm really happy",
+  },
 ];
 
 /**
@@ -113,9 +118,14 @@ function displayComment(comment) {
   commentsSection.appendChild(card);
 }
 
-// console.log(comment.dateAdded.toLocaleDateString());
 let commentsSection = document.querySelector(".display-comments");
 
+//sort array of objects based on date of post
+comments.sort((a, b) => {
+  return b.dateAdded - a.dateAdded;
+});
+
+//display all comments
 for (let comment of comments) {
   displayComment(comment);
 }
