@@ -1,0 +1,26 @@
+@use "./partials/resets";
+@use "./partials/mixins";
+@use "./partials/fonts";
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: fonts.$font-name;
+  min-width: 100%;
+  min-height: 100vh;
+
+  @include mixins.devices(mobile) {
+    //code for mobile
+    @include mixins.mobile-styles;
+  }
+
+  @include mixins.devices(tablet) {
+    //code for tablet
+    @include mixins.tablet-styles;
+  }
+
+  @include mixins.devices(desktop) {
+    // code set for mobile
+    @include mixins.desktop-styles;
+  }
+}

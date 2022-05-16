@@ -1,6 +1,6 @@
 //data for comments in array of objects
 
-let comments = [
+const comments = [
   {
     fullName: "Connor Walton",
     //months in date object start from 0
@@ -126,6 +126,10 @@ submitForm.addEventListener("submit", (e) => {
 
   comments.unshift(submission);
   displayComment(submission);
+
+  document.querySelector(".write-comments__input-name").value = "";
+
+  document.querySelector(".write-comments__comment-area").value = "";
 });
 
 //display all comments
