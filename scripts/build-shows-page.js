@@ -53,6 +53,8 @@ function createNodeEl(element, className, textContent, attributeObj) {
   return el;
 }
 
+
+//toLocalDateString
 function createShows(show) {
   const table = createNodeEl("table", "shows__table", null, null);
   const row1 = createNodeEl("tr", null, null, null);

@@ -1,28 +1,60 @@
 //key  {"api_key":"24dbb569-d980-4c7a-8d60-8ccd2f2975b7"}
 
+const API_KEY = "24dbb569-d980-4c7a-8d60-8ccd2f2975b7";
+const BASE_URL = "https://project-1-api.herokuapp.com";
+const apiParameter = `?api_key=${API_KEY}`;
+
+let commentsSection = document.querySelector(".display-comments");
+let submitForm = document.querySelector(".write-comments__col2-form");
+
+// queries
+let commentsQuery = `${BASE_URL}/comments${apiParameter}`;
+// const comments = [];
+
+axios
+  .get(commentsQuery)
+  .then(function (response) {
+    // console.log(response);
+    console.log(response.data);
+
+    let comments = response.data;
+    console.log(comments);
+
+    for (let comment of comments) {
+      displayComment(comment);
+    }
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+
 //data for comments in array of objects
 
-const comments = [
-  {
-    fullName: "Connor Walton",
-    //months in date object start from 0
-    dateAdded: new Date(2021, 02 - 1, 17),
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    fullName: "Emilie Beach",
-    //months in date object start from 0
-    dateAdded: new Date(2021, 01 - 1, 09),
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
+// const comments = [
+//   {
+//     fullName: "Connor Walton",
+//     //months in date object start from 0
+//     dateAdded: new Date(2021, 02 - 1, 17),
+//     text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//   },
+//   {
+//     fullName: "Emilie Beach",
+//     //months in date object start from 0
+//     dateAdded: new Date(2021, 01 - 1, 09),
+//     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
 
-  {
-    fullName: "Miles Acosta",
-    //months in date object start from 0
-    dateAdded: new Date(2020, 12 - 1, 20),
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+//   {
+//     fullName: "Miles Acosta",
+//     //months in date object start from 0
+//     dateAdded: new Date(2020, 12 - 1, 20),
+//     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+// ];
 
 /**
  *
@@ -70,20 +102,20 @@ function createCommentCard(comment) {
   const cardHeader = createNodeEl(
     "h3",
     "display-comments__card-header",
-    comment.fullName,
+    comment.name,
     null
   );
   const cardDate = createNodeEl(
     "time",
     "display-comments__date",
-    `${comment.dateAdded.toLocaleDateString()}`,
+    `${new Date(comment.timestamp).toLocaleDateString()}`,
     null
   );
 
   const commentText = createNodeEl(
     "p",
     "display-comments__comment-text",
-    comment.text,
+    comment.comment,
     null
   );
 
@@ -106,9 +138,6 @@ function sortComments() {
     return b.dateAdded - a.dateAdded;
   });
 }
-
-let commentsSection = document.querySelector(".display-comments");
-let submitForm = document.querySelector(".write-comments__col2-form");
 
 submitForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -133,9 +162,3 @@ submitForm.addEventListener("submit", (e) => {
 
   document.querySelector(".write-comments__comment-area").value = "";
 });
-
-//display all comments
-
-for (let comment of comments) {
-  displayComment(comment);
-}
