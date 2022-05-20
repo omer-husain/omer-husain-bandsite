@@ -1,35 +1,61 @@
-const shows = [
-  {
-    date: new Date("Mon Sept 06 2021"),
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Tue Sept 21 2021"),
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Fri Oct 15 2021"),
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Sat Nov 06 2021"),
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Fri Nov 26, 2021"),
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Wed Dec 15 2021"),
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const API_KEY = "24dbb569-d980-4c7a-8d60-8ccd2f2975b7";
+const BASE_URL = "https://project-1-api.herokuapp.com";
+const apiParameter = `?api_key=${API_KEY}`;
+
+// queries
+let showsQuery = `${BASE_URL}/showdates${apiParameter}`;
+
+console.log(showsQuery);
+
+function getShows() {
+  // Make a request for a user with a given ID
+  axios
+    .get(showsQuery)
+    .then(function (response) {
+      // handle success
+      console.log(response);
+      displayShows(response.data);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
+}
+
+// GET /showdates
+
+// const shows = [
+//   {
+//     date: new Date("Mon Sept 06 2021"),
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: new Date("Tue Sept 21 2021"),
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: new Date("Fri Oct 15 2021"),
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: new Date("Sat Nov 06 2021"),
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: new Date("Fri Nov 26, 2021"),
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: new Date("Wed Dec 15 2021"),
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
 
 /**
  *
@@ -53,105 +79,60 @@ function createNodeEl(element, className, textContent, attributeObj) {
   return el;
 }
 
-
 //toLocalDateString
-function createShows(show) {
-  const table = createNodeEl("table", "shows__table", null, null);
-  const row1 = createNodeEl("tr", null, null, null);
-  const dateHeading = createNodeEl("th", "shows__sub-heading", "DATE", null);
-  const row2 = createNodeEl("tr", null, null, null);
+
+function createShowCard(show) {
+  const card = createNodeEl("article", "shows__table", null, null);
+  const dateHeading = createNodeEl("h3", "shows__sub-heading", "DATE", null);
   const dateValue = createNodeEl(
-    "td",
+    "time",
     "shows__date",
-    `${show.date.toDateString()}`,
+    new Date(Number(show.date)).toLocaleDateString(),
     null
   );
-  const row3 = createNodeEl("tr", null, null, null);
-  const venueHeading = createNodeEl("td", "shows__sub-heading", "VENUE", null);
-  const row4 = createNodeEl("tr", null, null, null);
-  const venueValue = createNodeEl("td", "shows__venue", show.venue, null);
 
-  const row5 = createNodeEl("tr", null, null, null);
+  const venueHeading = createNodeEl("h3", "shows__sub-heading", "VENUE", null);
+  const venueValue = createNodeEl("p", "shows__venue", show.place, null);
+
   const locationHeading = createNodeEl(
-    "th",
+    "h3",
     "shows__sub-heading",
     "LOCATION",
     null
   );
-
-  const row6 = createNodeEl("tr", null, null, null);
   const locationValue = createNodeEl(
-    "td",
+    "p",
     "shows__location",
     show.location,
     null
   );
 
-  const row7 = createNodeEl("tr", null, null, null);
   const button = createNodeEl("button", "shows__button", "BUY TICKETS", null);
 
-  table.append(row1, row2, row3, row4, row5, row6, row7);
+  card.append(
+    dateHeading,
+    dateValue,
+    venueHeading,
+    venueValue,
+    locationHeading,
+    locationValue,
+    button
+  );
 
-  row1.append(dateHeading);
-  row2.append(dateValue);
-  row3.append(venueHeading);
-  row4.append(venueValue);
-  row5.append(locationHeading);
-  row6.append(locationValue);
-  row7.append(button);
-
-  return table;
+  return card;
 }
 
-// function createShowCard(show) {
-//   const card = createNodeEl("article", "shows__table", null, null);
-//   const dateHeading = createNodeEl("h3", "shows__sub-heading", "DATE", null);
-//   const dateValue = createNodeEl(
-//     "time",
-//     "shows__date",
-//     `${show.date.toDateString()}`,
-//     null
-//   );
-
-//   const venueHeading = createNodeEl("h3", "shows__sub-heading", "VENUE", null);
-//   const venueValue = createNodeEl("p", "shows__venue", show.venue, null);
-
-//   const locationHeading = createNodeEl(
-//     "h3",
-//     "shows__sub-heading",
-//     "LOCATION",
-//     null
-//   );
-//   const locationValue = createNodeEl(
-//     "p",
-//     "shows__location",
-//     show.location,
-//     null
-//   );
-
-//   const button = createNodeEl("button", "shows__button", "BUY TICKETS", null);
-
-//   card.append(
-//     dateHeading,
-//     dateValue,
-//     venueHeading,
-//     venueValue,
-//     locationHeading,
-//     locationValue,
-//     button
-//   );
-
-//   return card;
-// }
-
 function displayShow(show) {
-  let table = createShows(show);
-  console.log(table);
-  showsSection.append(table); 
+  let card = createShowCard(show);
+  showsSection.append(card);
 }
 
 let showsSection = document.querySelector(".shows__container");
 
-for (let show of shows) {
-  displayShow(show);
+function displayShows(shows) {
+  for (let show of shows) {
+    displayShow(show);
+  }
 }
+
+getShows();

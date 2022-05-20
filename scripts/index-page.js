@@ -121,6 +121,7 @@ function getComments() {
     });
 }
 
+
 function postComment(submittedName, submittedComment) {
   axios
     .post(commentsQuery, {
