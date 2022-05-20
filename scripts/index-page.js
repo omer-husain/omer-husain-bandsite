@@ -8,6 +8,7 @@ let submitForm = document.querySelector(".write-comments__col2-form");
 
 // queries
 let commentsQuery = `${BASE_URL}/comments${apiParameter}`;
+
 // const comments = [];
 
 /**
@@ -73,10 +74,45 @@ function createCommentCard(comment) {
     null
   );
 
+  const likebutton = createNodeEl(
+    "img",
+    "display-comments__like-button",
+    null,
+    { src: "./assets/icons/SVG/icon-like.svg", alt: "like" }
+  );
+
+  likebutton.addEventListener("click", () => {
+    incrementLike(comment.id);
+  });
+
+  const likesCounter = createNodeEl(
+    "label",
+    "display-comments__likes-counter",
+    `likes: ${comment.likes}`,
+    {}
+  );
+
+  const deleteButton = createNodeEl(
+    "img",
+    "display-comments__delete-button",
+    null,
+    { src: "./assets/icons/SVG/icon-delete.svg", alt: "delete" }
+  );
+
+  deleteButton.addEventListener("click", () => {
+    deleteComment(comment.id);
+  });
+
   card.append(cardCol1, cardCol2);
   cardCol1.append(cardAvatar);
   cardCol2.append(cardCol2Row, commentText);
-  cardCol2Row.append(cardHeader, cardDate);
+  cardCol2Row.append(
+    cardHeader,
+    cardDate,
+    likebutton,
+    likesCounter,
+    deleteButton
+  );
   return card;
 }
 
@@ -84,26 +120,6 @@ function displayComment(comment) {
   card = createCommentCard(comment);
   commentsSection.prepend(card); //appends to first position
 }
-
-submitForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let submittedName = document.querySelector(
-    ".write-comments__input-name"
-  ).value;
-  let submittedComment = document.querySelector(
-    ".write-comments__comment-area"
-  ).value;
-
-  let submission = {
-    name: submittedName,
-    comment: submittedComment,
-  };
-
-  postComment(submission.name, submission.comment);
-  document.querySelector(".write-comments__input-name").value = "";
-  document.querySelector(".write-comments__comment-area").value = "";
-});
 
 function getComments() {
   axios
@@ -121,7 +137,6 @@ function getComments() {
     });
 }
 
-
 function postComment(submittedName, submittedComment) {
   axios
     .post(commentsQuery, {
@@ -131,7 +146,7 @@ function postComment(submittedName, submittedComment) {
     .then(function (response) {
       console.log(`post worked`);
       console.log(response);
-      getComments();
+      refreshComments();
 
       // displayComments(getComments());
     })
@@ -154,5 +169,63 @@ function displayComments(comments) {
     displayComment(comment);
   }
 }
+
+// PUT /comments/:id/like
+
+function incrementLike(commentId) {
+  let likeQuery = `${BASE_URL}/comments/${commentId}/like${apiParameter}`;
+  console.log(likeQuery);
+  axios
+    .put(likeQuery)
+    .then((response) => {
+      console.log("Put worked!");
+      refreshComments();
+    })
+    .catch((err) => {
+      console.log("Put didn't work", err);
+    });
+}
+
+function deleteComment(commentId) {
+  let deleteQuery = `${BASE_URL}/comments/${commentId}${apiParameter}`;
+  console.log(deleteQuery);
+
+  axios
+    .delete(deleteQuery)
+    .then((response) => {
+      console.log("delete worked");
+      refreshComments();
+    })
+    .catch((err) => {
+      console.log("Put didn't work", err);
+    });
+}
+
+submitForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let submittedName = document.querySelector(
+    ".write-comments__input-name"
+  ).value;
+  let submittedComment = document.querySelector(
+    ".write-comments__comment-area"
+  ).value;
+
+  let submission = {
+    name: submittedName,
+    comment: submittedComment,
+  };
+
+  postComment(submission.name, submission.comment);
+  document.querySelector(".write-comments__input-name").value = "";
+  document.querySelector(".write-comments__comment-area").value = "";
+});
+
+function refreshComments() {
+  //clear comments from dom and reload fresh from api
+  commentsSection.innerHTML = "";
+  getComments();
+}
+
 //invocation
-getComments();
+refreshComments();

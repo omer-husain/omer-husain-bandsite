@@ -22,41 +22,6 @@ function getShows() {
     });
 }
 
-// GET /showdates
-
-// const shows = [
-//   {
-//     date: new Date("Mon Sept 06 2021"),
-//     venue: "Ronald Lane",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: new Date("Tue Sept 21 2021"),
-//     venue: "Pier 3 East",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: new Date("Fri Oct 15 2021"),
-//     venue: "View Lounge",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: new Date("Sat Nov 06 2021"),
-//     venue: "Hyatt Agency",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: new Date("Fri Nov 26, 2021"),
-//     venue: "Moscow Center",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: new Date("Wed Dec 15 2021"),
-//     venue: "Press Club",
-//     location: "San Francisco, CA",
-//   },
-// ];
-
 /**
  *
  * @param {string} element
@@ -87,7 +52,7 @@ function createShowCard(show) {
   const dateValue = createNodeEl(
     "time",
     "shows__date",
-    new Date(Number(show.date)).toLocaleDateString(),
+    new Date(Number(show.date)).toDateString(),
     null
   );
 
