@@ -1,6 +1,12 @@
 @use "./partials/resets";
 @use "./partials/mixins";
 @use "./partials/fonts";
+@use "./partials/variables";
+@use "./partials/colours";
+@use "./partials/mobile-type" as m;
+@use "./partials/tablet-type" as t;
+@use "./partials/desktop-type" as d;
+@use "sass:map";
 
 body {
   display: flex;
@@ -9,18 +15,1023 @@ body {
   min-width: 100%;
   min-height: 100vh;
 
-  @include mixins.devices(mobile) {
-    //code for mobile
-    @include mixins.mobile-styles;
-  }
-
-  @include mixins.devices(tablet) {
-    //code for tablet
-    @include mixins.tablet-styles;
-  }
-
-  @include mixins.devices(desktop) {
-    // code set for mobile
-    @include mixins.desktop-styles;
+  a {
+    &:link {
+      text-decoration: none;
+      color: colours.$White;
+    }
+    &:visited {
+      text-decoration: none;
+      color: colours.$White;
+    }
+    &:hover {
+      text-decoration: none;
+      color: colours.$White;
+    }
+    &:active {
+      text-decoration: none;
+      color: colours.$White;
+    }
   }
 }
+.nav {
+  background-color: colours.$BandSite-Black;
+  color: colours.$White;
+
+  @include mixins.devices(tablet) {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+  }
+
+  &__logo {
+    padding: 0.5rem;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    text-align: center;
+    // width: 100%;
+    // max-height: 20px;
+
+    @include mixins.devices(tablet) {
+      ont-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 500;
+      padding: 2rem;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @include mixins.devices(tablet) {
+      list-style-type: none;
+      height: 100%;
+    }
+  }
+
+  &__list a {
+    color: colours.$Mercury;
+
+    &:link {
+      text-decoration: none;
+    }
+    &:visited {
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: none;
+      color: colours.$White;
+    }
+    &:active {
+      text-decoration: none;
+      color: colours.$White;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+
+    @include mixins.devices(tablet) {
+      padding: 1.6rem 0;
+      margin: 1.2rem;
+    }
+
+    &:hover {
+      border-bottom: 0.3rem solid white;
+      color: colours.$White;
+      font-weight: 700;
+
+      @include mixins.devices(tablet) {
+        border-bottom: 0.4rem solid white;
+      }
+    }
+    &:active {
+      border-bottom: 0.3rem solid white;
+      color: colours.$White;
+      font-weight: 700;
+
+      @include mixins.devices(tablet) {
+        border-bottom: 0.4rem solid white;
+      }
+    }
+  }
+
+  &__link--active {
+    color: colours.$White;
+    border-bottom: 0.3rem solid white;
+    font-weight: 700;
+
+    @include mixins.devices(tablet) {
+      border-bottom: 0.4rem solid white;
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  // position: relative;
+
+  &__heading {
+    font-size: 7.5vw;
+    transform: translate(5vw, 29vw);
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__sub-heading {
+    font-size: 3.5vw;
+    transform: translate(5vw, 10vw);
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__soundcloud {
+    // transform: translate(5vw, 15vw);
+    // position: absolute;
+    // z-index: 1;
+  }
+
+  &__overlay {
+    background-color: colours.$BandSite-Black;
+    position: absolute;
+    z-index: 0;
+  }
+
+  &__image {
+    z-index: -2;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 109%;
+    opacity: 50%;
+  }
+}
+
+.shows {
+  padding: 0 variables.$margin-mobile-LR;
+  background-color: colours.$White;
+
+  &__heading {
+    font-size: map.get(m.$section-header, "text-size");
+    line-height: map.get(m.$section-header, "line-height");
+    font-weight: map.get(m.$section-header, "text-weight");
+    margin-top: variables.$margin-top-headline-mobile;
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+    padding-top: variables.$margin-top-headline-mobile;
+  }
+
+  &__sub-heading {
+    margin-bottom: 4px;
+    color: colours.$Mercury;
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid colours.$Mercury;
+    justify-content: space-between;
+  }
+
+  &__card {
+    border-bottom: 1px solid colours.$Mercury;
+  }
+
+  &__date {
+    font-weight: 700;
+  }
+
+  &__button {
+    width: 100%;
+    font-size: map.get(m.$button-text, "text-size");
+    line-height: map.get(m.$button-text, "line-height");
+    font-weight: map.get(m.$button-text, "text-weight");
+    color: colours.$White;
+    background-color: colours.$BandSite-Black;
+    height: 40px;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: colours.$BandSite-DarkBlack;
+    }
+  }
+}
+
+.about-musicians {
+  padding: 0 variables.$margin-mobile-LR;
+
+  @include mixins.devices(tablet) {
+    padding: 0 variables.$margin-tablet-LR * 2.5;
+  }
+
+  &__heading {
+    font-size: map.get(m.$section-header, "text-size");
+    line-height: map.get(m.$section-header, "line-height");
+    font-weight: map.get(m.$section-header, "text-weight");
+    margin-top: variables.$margin-top-headline-mobile;
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+
+    @include mixins.devices(tablet) {
+      padding: 0 variables.$margin-tablet-LR;
+      font-size: map.get(t.$section-header, "text-size");
+      line-height: map.get(t.$section-header, "line-height");
+      font-weight: map.get(t.$section-header, "text-weight");
+      margin-top: variables.$margin-top-headline-tablet;
+      margin-bottom: variables.$margin-bottom-headline-tablet;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+
+    @include mixins.devices(tablet) {
+      margin-bottom: variables.$margin-bottom-headline-tablet;
+    }
+  }
+
+  &__quote {
+    font-weight: 700;
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+
+    @include mixins.devices(tablet) {
+      margin-bottom: variables.$margin-bottom-headline-tablet;
+    }
+  }
+
+  &__sub-heading {
+    font-size: map.get(m.$section-subheader, "text-size");
+    line-height: map.get(m.$section-subheader, "line-height");
+    font-weight: map.get(m.$section-subheader, "text-weight");
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+
+    @include mixins.devices(tablet) {
+      font-size: map.get(t.$section-subheader, "text-size");
+      line-height: map.get(t.$section-subheader, "line-height");
+      font-weight: map.get(t.$section-subheader, "text-weight");
+      margin-bottom: variables.$margin-bottom-headline-tablet;
+    }
+  }
+
+  &__copy {
+    @include mixins.devices(tablet) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 40%;
+    }
+  }
+
+  &__biography-paragraph {
+    font-size: map.get(m.$body-copy, "text-size");
+    line-height: map.get(m.$body-copy, "line-height");
+    font-weight: map.get(m.$body-copy, "text-weight");
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+
+    @include mixins.devices(tablet) {
+      width: 48%;
+      font-size: map.get(t.$body-copy, "text-size");
+      line-height: map.get(t.$body-copy, "line-height");
+      font-weight: map.get(t.$body-copy, "text-weight");
+      margin-bottom: variables.$margin-bottom-headline-tablet;
+    }
+  }
+}
+
+.photo-gallery {
+  padding: 0 variables.$margin-mobile-LR;
+  background-color: colours.$Alabaster;
+
+  @include mixins.devices(tablet) {
+    padding: 0 variables.$margin-tablet-LR;
+  }
+
+  &__heading {
+    font-size: map.get(m.$section-header, "text-size");
+    line-height: map.get(m.$section-header, "line-height");
+    font-weight: map.get(m.$section-header, "text-weight");
+    margin-top: variables.$margin-top-headline-mobile;
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+    padding-top: variables.$margin-top-headline-mobile;
+
+    @include mixins.devices(tablet) {
+      font-size: map.get(t.$section-header, "text-size");
+      line-height: map.get(t.$section-header, "line-height");
+      font-weight: map.get(t.$section-header, "text-weight");
+      margin-top: variables.$margin-top-headline-tablet;
+      margin-bottom: variables.$margin-bottom-headline-tablet;
+      padding-top: variables.$margin-top-headline-tablet;
+    }
+  }
+
+  &__image-container {
+    @include mixins.devices(tablet) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: variables.$margin-mobile-between-components;
+
+    @include mixins.devices(tablet) {
+      width: 30%;
+      margin: 1.2vw;
+    }
+  }
+}
+
+.write-comments {
+  padding: 0 variables.$margin-mobile-LR;
+  background-color: colours.$White;
+
+  &__heading {
+    font-size: map.get(m.$section-header, "text-size");
+    line-height: map.get(m.$section-header, "line-height");
+    font-weight: map.get(m.$section-header, "text-weight");
+    margin-top: variables.$margin-top-headline-mobile;
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+    padding-top: variables.$margin-top-headline-mobile;
+  }
+
+  &__form-container {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid colours.$Mercury;
+    justify-content: space-between;
+  }
+
+  &__col1-image {
+    width: 20%;
+  }
+  &__avatar {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  &__col2-form {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &__form-label {
+    margin-bottom: 4px;
+    color: colours.$Mercury;
+  }
+
+  &__input-name {
+    width: 100%;
+    border-radius: 4px;
+    padding: 4px;
+    border: 1px solid colours.$Mercury;
+    margin-bottom: 1.2rem;
+
+    &:active {
+      border: 1px solid colours.$BandSite-Black;
+    }
+
+    &:hover {
+    }
+  }
+
+  &__comment-area {
+    width: 100%;
+    border-radius: 4px;
+    padding: 4px;
+    border: 1px solid colours.$Mercury;
+    height: 5rem;
+    resize: none;
+    margin-bottom: 1.2rem;
+  }
+
+  &__button {
+    font-size: map.get(m.$button-text, "text-size");
+    line-height: map.get(m.$button-text, "line-height");
+    font-weight: map.get(m.$button-text, "text-weight");
+    color: colours.$White;
+    background-color: colours.$BandSite-Black;
+    height: 40px;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: colours.$BandSite-DarkBlack;
+    }
+  }
+}
+
+.display-comments {
+  padding: 0 variables.$margin-mobile-LR;
+  background-color: colours.$White;
+
+  &__card {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid colours.$Mercury;
+    justify-content: space-between;
+  }
+
+  &__card-col1 {
+    width: 20%;
+  }
+
+  &__avatar {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  &__card-col2 {
+    width: 75%;
+  }
+
+  &__heading-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__card-header {
+    display: inline-block;
+  }
+}
+
+.footer {
+  padding: 0 variables.$margin-mobile-LR;
+  background-color: colours.$BandSite-Black;
+  color: colours.$White;
+
+  font-size: map.get(m.$footer-copy, "text-size");
+  line-height: map.get(m.$footer-copy, "line-height");
+  font-weight: map.get(m.$footer-copy, "text-weight");
+
+  &__header {
+    font-size: map.get(m.$section-header, "text-size");
+    line-height: map.get(m.$section-header, "line-height");
+    font-weight: map.get(m.$section-header, "text-weight");
+    margin-top: variables.$margin-top-headline-mobile;
+    margin-bottom: variables.$margin-bottom-headline-mobile;
+  }
+
+  &__icon-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: variables.$margin-mobile-between-components;
+  }
+
+  &__social-icon {
+    width: 1.8rem;
+    height: 2rem;
+    margin: 0 2rem 0 0;
+  }
+
+  &__contact-name {
+    margin-top: variables.$margin-mobile-between-components;
+    font-weight: 700;
+  }
+
+  &__contact-company {
+    font-weight: 700;
+    margin-bottom: variables.$margin-mobile-between-components;
+  }
+
+  &__contact-email {
+    margin: variables.$margin-mobile-between-components 0;
+  }
+
+  &__logo {
+    // padding: 0.5rem;
+    margin-top: 3rem;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  &__copyright {
+    margin: variables.$margin-mobile-between-components 0;
+  }
+}
+
+// @include mixins.devices(tablet) {
+//   a {
+//     &:link {
+//       text-decoration: none;
+//       color: colours.$White;
+//     }
+//     &:visited {
+//       text-decoration: none;
+//       color: colours.$White;
+//     }
+//     &:hover {
+//       text-decoration: none;
+//       color: colours.$White;
+//     }
+//     &:active {
+//       text-decoration: none;
+//       color: colours.$White;
+//     }
+//   }
+
+//   .nav {
+//     background-color: colours.$BandSite-Black;
+//     color: colours.$White;
+//     display: flex;
+//     align-items: center;
+//     height: 5rem;
+
+//     &__logo {
+//       font-size: 1.5rem;
+//       line-height: 2rem;
+//       font-weight: 500;
+//       padding: 2rem;
+//     }
+
+//     &__list {
+//       list-style-type: none;
+//       height: 100%;
+
+//       // margin-right: 5rem;
+//     }
+
+//     &__list a {
+//       color: colours.$Mercury;
+
+//       &:link {
+//         text-decoration: none;
+//       }
+//       &:visited {
+//         text-decoration: none;
+//       }
+//       &:hover {
+//         text-decoration: none;
+//         color: colours.$White;
+//       }
+//       &:active {
+//         text-decoration: none;
+//         color: colours.$White;
+//       }
+//     }
+
+//     &__link {
+//       width: 100%;
+//       text-align: center;
+//       padding: 1.6rem 0;
+//       margin: 1.2rem;
+//       &:hover {
+//         border-bottom: 0.4rem solid white;
+//         color: colours.$White;
+//         font-weight: 700;
+//       }
+//       &:active {
+//         border-bottom: 0.4rem solid white;
+//         color: colours.$White;
+//         font-weight: 700;
+//       }
+//     }
+
+//     &__link--active {
+//       color: colours.$White;
+//       border-bottom: 0.4rem solid white;
+//       font-weight: 700;
+//     }
+//   }
+
+//   .hero {
+//     width: 100%;
+
+//     &__heading {
+//       font-size: 7.5vw;
+//       transform: translate(5vw, 29vw);
+//       font-weight: 700;
+//       color: white;
+//       position: absolute;
+//       z-index: 1;
+//     }
+
+//     &__overlay {
+//       background-color: colours.$BandSite-Black;
+//     }
+
+//     &__image {
+//       z-index: -2;
+//       margin-left: auto;
+//       margin-right: auto;
+//       width: 100%;
+//       height: 100%;
+//       opacity: 50%;
+//     }
+//   }
+
+//   .about-musicians {
+//     padding: 0 variables.$margin-tablet-LR * 2.5;
+
+//     &__heading {
+//       padding: 0 variables.$margin-tablet-LR;
+//       font-size: map.get(t.$section-header, "text-size");
+//       line-height: map.get(t.$section-header, "line-height");
+//       font-weight: map.get(t.$section-header, "text-weight");
+//       margin-top: variables.$margin-top-headline-tablet;
+//       margin-bottom: variables.$margin-bottom-headline-tablet;
+//     }
+
+//     &__image {
+//       width: 100%;
+//       margin-bottom: variables.$margin-bottom-headline-tablet;
+//     }
+
+//     &__quote {
+//       font-weight: 700;
+//       margin-bottom: variables.$margin-bottom-headline-tablet;
+//     }
+
+//     &__sub-heading {
+//       font-size: map.get(t.$section-subheader, "text-size");
+//       line-height: map.get(t.$section-subheader, "line-height");
+//       font-weight: map.get(t.$section-subheader, "text-weight");
+//       margin-bottom: variables.$margin-bottom-headline-tablet;
+//     }
+
+//     &__copy {
+//       display: flex;
+//       justify-content: space-between;
+//       flex-wrap: wrap;
+//       // width: 40%;
+//     }
+
+//     &__biography-paragraph {
+//       width: 48%;
+//       font-size: map.get(t.$body-copy, "text-size");
+//       line-height: map.get(t.$body-copy, "line-height");
+//       font-weight: map.get(t.$body-copy, "text-weight");
+//       margin-bottom: variables.$margin-bottom-headline-tablet;
+//     }
+//   }
+
+//   .photo-gallery {
+//     padding: 0 variables.$margin-tablet-LR;
+//     background-color: colours.$Alabaster;
+//     &__heading {
+//       font-size: map.get(t.$section-header, "text-size");
+//       line-height: map.get(t.$section-header, "line-height");
+//       font-weight: map.get(t.$section-header, "text-weight");
+//       margin-top: variables.$margin-top-headline-tablet;
+//       margin-bottom: variables.$margin-bottom-headline-tablet;
+//       padding-top: variables.$margin-top-headline-tablet;
+//     }
+
+//     &__image-container {
+//       width: 100%;
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//     }
+
+//     &__image {
+//       width: 30%;
+//       margin: 1.2vw;
+//       // margin-bottom: variables.$margin-tablet-between-components;
+//     }
+//   }
+
+//   .footer {
+//     position: relative;
+//     padding: 0 variables.$margin-tablet-LR;
+//     background-color: colours.$BandSite-Black;
+//     color: colours.$White;
+
+//     font-size: map.get(t.$footer-copy, "text-size");
+//     line-height: map.get(t.$footer-copy, "line-height");
+//     font-weight: map.get(t.$footer-copy, "text-weight");
+
+//     &__line-break {
+//       white-space: pre-line;
+//     }
+
+//     &__header {
+//       font-size: map.get(t.$section-header, "text-size");
+//       line-height: map.get(t.$section-header, "line-height");
+//       font-weight: map.get(t.$section-header, "text-weight");
+//       margin-top: variables.$margin-top-headline-tablet;
+//       margin-bottom: variables.$margin-bottom-headline-tablet;
+//     }
+
+//     &__row {
+//       width: 100%;
+//       display: flex;
+//     }
+
+//     &__contact-card {
+//       width: 30%;
+//       margin: 0 3vw;
+//     }
+
+//     &__icon-list {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: flex-start;
+//       align-items: center;
+//       margin: 0 2rem;
+//     }
+
+//     &__social-icon {
+//       width: 1.8rem;
+//       height: 2rem;
+//       margin: 0 2rem 0 0;
+//     }
+
+//     &__contact-name {
+//       margin-top: variables.$margin-tablet-between-components;
+//       font-weight: 700;
+//     }
+
+//     &__contact-company {
+//       font-weight: 700;
+//       margin-bottom: variables.$margin-tablet-between-components;
+//     }
+
+//     &__contact-email {
+//       margin: variables.$margin-tablet-between-components 0;
+//     }
+
+//     &__logo {
+//       font-size: 1.5rem;
+//       line-height: 2rem;
+//       font-weight: 500;
+//       text-align: left;
+//       position: absolute;
+//       position: absolute;
+//       top: 0%;
+//       left: calc(100% - 12rem);
+//     }
+
+//     &__copyright {
+//       margin: variables.$margin-tablet-between-components 0;
+//     }
+//   }
+
+//   @include mixins.devices(desktop) {
+//     a {
+//       &:link {
+//         text-decoration: none;
+//         color: colours.$White;
+//       }
+//       &:visited {
+//         text-decoration: none;
+//         color: colours.$White;
+//       }
+//       &:hover {
+//         text-decoration: none;
+//         color: colours.$White;
+//       }
+//       &:active {
+//         text-decoration: none;
+//         color: colours.$White;
+//       }
+//     }
+
+//     .nav {
+//       background-color: colours.$BandSite-Black;
+//       color: colours.$White;
+//       display: flex;
+//       align-items: center;
+//       height: 5rem;
+
+//       &__logo {
+//         font-size: 1.5rem;
+//         line-height: 2rem;
+//         font-weight: 500;
+//         padding: 2rem;
+//       }
+
+//       &__list {
+//         list-style-type: none;
+//         height: 100%;
+//       }
+
+//       &__list a {
+//         color: colours.$Mercury;
+
+//         &:link {
+//           text-decoration: none;
+//         }
+//         &:visited {
+//           text-decoration: none;
+//         }
+//         &:hover {
+//           text-decoration: none;
+//           color: colours.$White;
+//         }
+//         &:active {
+//           text-decoration: none;
+//           color: colours.$White;
+//         }
+//       }
+
+//       &__link {
+//         width: 100%;
+//         text-align: center;
+//         padding: 1.6rem 0;
+//         margin: 1.2rem;
+//         &:hover {
+//           border-bottom: 0.4rem solid white;
+//           color: colours.$White;
+//           font-weight: 700;
+//         }
+//         &:active {
+//           border-bottom: 0.4rem solid white;
+//           color: colours.$White;
+//           font-weight: 700;
+//         }
+//       }
+
+//       &__link--active {
+//         color: colours.$White;
+//         border-bottom: 0.4rem solid white;
+//         font-weight: 700;
+//       }
+//     }
+
+//     .hero {
+//       width: 100%;
+
+//       &__heading {
+//         font-size: 7.5vw;
+//         transform: translate(5vw, 29vw);
+//         font-weight: 700;
+//         color: white;
+//         position: absolute;
+//         z-index: 1;
+//       }
+
+//       &__overlay {
+//         background-color: colours.$BandSite-Black;
+//       }
+
+//       &__image {
+//         z-index: -2;
+//         margin-left: auto;
+//         margin-right: auto;
+//         width: 100%;
+//         height: 100%;
+//         opacity: 50%;
+//       }
+
+//       .about-musicians {
+//         padding: 0 variables.$margin-desktop-LR * 5;
+
+//         &__heading {
+//           padding: 0 variables.$margin-desktop-LR;
+//           font-size: map.get(d.$section-header, "text-size");
+//           line-height: map.get(d.$section-header, "line-height");
+//           font-weight: map.get(d.$section-header, "text-weight");
+//           margin-top: variables.$margin-top-headline-desktop;
+//           margin-bottom: variables.$margin-bottom-headline-desktop;
+//         }
+
+//         &__image {
+//           width: 100%;
+//           margin-bottom: variables.$margin-bottom-headline-desktop;
+//         }
+
+//         &__quote {
+//           font-weight: 700;
+//           margin-bottom: variables.$margin-bottom-headline-desktop;
+//         }
+
+//         &__sub-heading {
+//           font-size: map.get(d.$section-subheader, "text-size");
+//           line-height: map.get(d.$section-subheader, "line-height");
+//           font-weight: map.get(d.$section-subheader, "text-weight");
+//           margin-bottom: variables.$margin-bottom-headline-desktop;
+//         }
+
+//         &__copy {
+//           display: flex;
+//           justify-content: space-between;
+//           flex-wrap: wrap;
+//         }
+
+//         &__biography-paragraph {
+//           width: 48%;
+//           font-size: map.get(d.$body-copy, "text-size");
+//           line-height: map.get(d.$body-copy, "line-height");
+//           font-weight: map.get(d.$body-copy, "text-weight");
+//           margin-bottom: variables.$margin-bottom-headline-desktop;
+//         }
+//       }
+
+//       .photo-gallery {
+//         padding: 0 variables.$margin-desktop-LR;
+//         background-color: colours.$Alabaster;
+//         &__heading {
+//           font-size: map.get(d.$section-header, "text-size");
+//           line-height: map.get(d.$section-header, "line-height");
+//           font-weight: map.get(d.$section-header, "text-weight");
+//           margin-top: variables.$margin-top-headline-desktop;
+//           margin-bottom: variables.$margin-bottom-headline-desktop;
+//           padding-top: variables.$margin-top-headline-desktop;
+//         }
+
+//         &__image-container {
+//           width: 100%;
+//           display: flex;
+//           justify-content: space-between;
+//           align-items: center;
+//         }
+
+//         &__image {
+//           width: 30%;
+//           margin: 1.2vw;
+//         }
+//       }
+
+//       .footer {
+//         position: relative;
+//         padding: 0 variables.$margin-desktop-LR;
+//         background-color: colours.$BandSite-Black;
+//         color: colours.$White;
+
+//         font-size: map.get(d.$footer-copy, "text-size");
+//         line-height: map.get(d.$footer-copy, "line-height");
+//         font-weight: map.get(d.$footer-copy, "text-weight");
+
+//         &__line-break {
+//           white-space: pre-line;
+//         }
+
+//         &__header {
+//           font-size: map.get(d.$section-header, "text-size");
+//           line-height: map.get(d.$section-header, "line-height");
+//           font-weight: map.get(d.$section-header, "text-weight");
+//           margin-top: variables.$margin-top-headline-desktop;
+//           margin-bottom: variables.$margin-bottom-headline-desktop;
+//         }
+
+//         &__row {
+//           width: 100%;
+//           display: flex;
+//         }
+
+//         &__contact-card {
+//           width: 15%;
+//           margin: 0 3vw;
+//         }
+
+//         &__icon-list {
+//           display: flex;
+//           flex-direction: row;
+//           justify-content: flex-start;
+//           align-items: center;
+//           margin: 0 2rem;
+//         }
+
+//         &__social-icon {
+//           width: 1.8rem;
+//           height: 2rem;
+//           margin: 0 2rem 0 0;
+//         }
+
+//         &__contact-name {
+//           margin-top: variables.$margin-desktop-between-components;
+//           font-weight: 700;
+//         }
+
+//         &__contact-company {
+//           font-weight: 700;
+//           margin-bottom: variables.$margin-desktop-between-components;
+//         }
+
+//         &__contact-email {
+//           margin: variables.$margin-desktop-between-components 0;
+//         }
+
+//         &__logo {
+//           font-size: 1.5rem;
+//           line-height: 2rem;
+//           font-weight: 500;
+//           text-align: left;
+//           position: absolute;
+//           top: 0%;
+//           left: calc(100% - 12rem);
+//         }
+
+//         &__copyright {
+//           margin: variables.$margin-desktop-between-components 0;
+//         }
+//       }
+//     }
+//   }
+// }

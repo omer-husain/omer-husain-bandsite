@@ -124,14 +124,15 @@ body {
   }
   body .hero__overlay {
     background-color: #323232;
-    position: relative;
+    position: absolute;
+    z-index: 0;
   }
   body .hero__image {
     z-index: -2;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: 100%;
+    height: 109%;
     opacity: 50%;
   }
   body .shows {

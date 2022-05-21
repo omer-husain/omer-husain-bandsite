@@ -32,700 +32,296 @@ body {
   min-width: 100%;
   min-height: 100vh;
 }
-@media only screen and (min-width: 6.25rem) {
-  body a:link {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body a:visited {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body a:hover {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body a:active {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body .nav {
-    background-color: #323232;
-    color: #ffffff;
-  }
-  body .nav__logo {
-    padding: 0.5rem;
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 500;
-    text-align: center;
-  }
-  body .nav__list {
-    list-style-type: none;
+body a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+body a:visited {
+  text-decoration: none;
+  color: #ffffff;
+}
+body a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+body a:active {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav {
+  background-color: #323232;
+  color: #ffffff;
+}
+@media only screen and (min-width: 48rem) {
+  .nav {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-  }
-  body .nav__list a {
-    color: #e1e1e1;
-  }
-  body .nav__list a:link {
-    text-decoration: none;
-  }
-  body .nav__list a:visited {
-    text-decoration: none;
-  }
-  body .nav__list a:hover {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body .nav__list a:active {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body .nav__link {
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem;
-  }
-  body .nav__link:hover {
-    border-bottom: 0.3rem solid white;
-    color: #ffffff;
-    font-weight: 700;
-  }
-  body .nav__link:active {
-    border-bottom: 0.3rem solid white;
-    color: #ffffff;
-    font-weight: 700;
-  }
-  body .nav__link--active {
-    color: #ffffff;
-    border-bottom: 0.3rem solid white;
-    font-weight: 700;
-  }
-  body .hero {
-    width: 100%;
-  }
-  body .hero__heading {
-    font-size: 7.5vw;
-    transform: translate(5vw, 29vw);
-    font-weight: 700;
-    color: white;
-    position: absolute;
-    z-index: 1;
-  }
-  body .hero__sub-heading {
-    font-size: 3.5vw;
-    transform: translate(5vw, 10vw);
-    font-weight: 700;
-    color: white;
-    position: absolute;
-    z-index: 1;
-  }
-  body .hero__overlay {
-    background-color: #323232;
-    position: relative;
-  }
-  body .hero__image {
-    z-index: -2;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 100%;
-    opacity: 50%;
-  }
-  body .shows {
-    padding: 0 1rem;
-    background-color: #ffffff;
-  }
-  body .shows__heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    padding-top: 1.5rem;
-  }
-  body .shows__sub-heading {
-    margin-bottom: 4px;
-    color: #e1e1e1;
-  }
-  body .shows__container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #e1e1e1;
-    justify-content: space-between;
-  }
-  body .shows__table {
-    text-align: left;
-    padding: 16px;
-  }
-  body .shows tr:hover {
-    background-color: #fafafa;
-  }
-  body .shows tr:active {
-    background-color: #e1e1e1;
-  }
-  body .shows__card {
-    border-bottom: 1px solid #e1e1e1;
-  }
-  body .shows__date {
-    font-weight: 700;
-  }
-  body .shows__button {
-    width: 100%;
-    font-size: 0.625rem;
-    line-height: 1.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    background-color: #323232;
-    height: 40px;
-    border-radius: 4px;
-  }
-  body .shows__button:hover {
-    background-color: #000000;
-  }
-  body .about-musicians {
-    padding: 0 1rem;
-  }
-  body .about-musicians__heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  body .about-musicians__image {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  body .about-musicians__quote {
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  body .about-musicians__sub-heading {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  body .about-musicians__biography-paragraph {
-    font-size: 0.813rem;
-    line-height: 1.125rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-  }
-  body .photo-gallery {
-    padding: 0 1rem;
-    background-color: #fafafa;
-  }
-  body .photo-gallery__heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    padding-top: 1.5rem;
-  }
-  body .photo-gallery__image {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  body .write-comments {
-    padding: 0 1rem;
-    background-color: #ffffff;
-  }
-  body .write-comments__heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    padding-top: 1.5rem;
-  }
-  body .write-comments__form-container {
-    width: 100%;
-    display: flex;
-    border-bottom: 1px solid #e1e1e1;
-    justify-content: space-between;
-  }
-  body .write-comments__col1-image {
-    width: 20%;
-  }
-  body .write-comments__avatar {
-    width: 100%;
-    border-radius: 50%;
-  }
-  body .write-comments__col2-form {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  body .write-comments__form-label {
-    margin-bottom: 4px;
-    color: #e1e1e1;
-  }
-  body .write-comments__input-name {
-    width: 100%;
-    border-radius: 4px;
-    padding: 4px;
-    border: 1px solid #e1e1e1;
-    margin-bottom: 1.2rem;
-  }
-  body .write-comments__input-name:active {
-    border: 1px solid #323232;
-  }
-  body .write-comments__comment-area {
-    width: 100%;
-    border-radius: 4px;
-    padding: 4px;
-    border: 1px solid #e1e1e1;
     height: 5rem;
-    resize: none;
-    margin-bottom: 1.2rem;
   }
-  body .write-comments__button {
-    font-size: 0.625rem;
-    line-height: 1.25rem;
+}
+.nav__logo {
+  padding: 0.5rem;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  text-align: center;
+}
+@media only screen and (min-width: 48rem) {
+  .nav__logo {
+    ont-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+    padding: 2rem;
+  }
+}
+.nav__list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media only screen and (min-width: 48rem) {
+  .nav__list {
+    list-style-type: none;
+    height: 100%;
+  }
+}
+.nav__list a {
+  color: #e1e1e1;
+}
+.nav__list a:link {
+  text-decoration: none;
+}
+.nav__list a:visited {
+  text-decoration: none;
+}
+.nav__list a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+.nav__list a:active {
+  text-decoration: none;
+  color: #ffffff;
+}
+.nav__link {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+}
+@media only screen and (min-width: 48rem) {
+  .nav__link {
+    padding: 1.6rem 0;
+    margin: 1.2rem;
+  }
+}
+.nav__link:hover {
+  border-bottom: 0.3rem solid white;
+  color: #ffffff;
+  font-weight: 700;
+}
+@media only screen and (min-width: 48rem) {
+  .nav__link:hover {
+    border-bottom: 0.4rem solid white;
+  }
+}
+.nav__link:active {
+  border-bottom: 0.3rem solid white;
+  color: #ffffff;
+  font-weight: 700;
+}
+@media only screen and (min-width: 48rem) {
+  .nav__link:active {
+    border-bottom: 0.4rem solid white;
+  }
+}
+.nav__link--active {
+  color: #ffffff;
+  border-bottom: 0.3rem solid white;
+  font-weight: 700;
+}
+@media only screen and (min-width: 48rem) {
+  .nav__link--active {
+    border-bottom: 0.4rem solid white;
+  }
+}
+
+.hero {
+  width: 100%;
+}
+.hero__heading {
+  font-size: 7.5vw;
+  transform: translate(5vw, 29vw);
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  z-index: 1;
+}
+.hero__sub-heading {
+  font-size: 3.5vw;
+  transform: translate(5vw, 10vw);
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  z-index: 1;
+}
+.hero__overlay {
+  background-color: #323232;
+  position: absolute;
+  z-index: 0;
+}
+.hero__image {
+  z-index: -2;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 109%;
+  opacity: 50%;
+}
+
+.shows {
+  padding: 0 1rem;
+  background-color: #ffffff;
+}
+.shows__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+}
+.shows__sub-heading {
+  margin-bottom: 4px;
+  color: #e1e1e1;
+}
+.shows__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e1e1e1;
+  justify-content: space-between;
+}
+.shows__card {
+  border-bottom: 1px solid #e1e1e1;
+}
+.shows__date {
+  font-weight: 700;
+}
+.shows__button {
+  width: 100%;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #323232;
+  height: 40px;
+  border-radius: 4px;
+}
+.shows__button:hover {
+  background-color: #000000;
+}
+
+.about-musicians {
+  padding: 0 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .about-musicians {
+    padding: 0 5.625rem;
+  }
+}
+.about-musicians__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .about-musicians__heading {
+    padding: 0 2.25rem;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
     font-weight: 700;
-    color: #ffffff;
-    background-color: #323232;
-    height: 40px;
-    border-radius: 4px;
+    margin-top: 3rem;
+    margin-bottom: 2.25rem;
   }
-  body .write-comments__button:hover {
-    background-color: #000000;
+}
+.about-musicians__image {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .about-musicians__image {
+    margin-bottom: 2.25rem;
   }
-  body .display-comments {
-    padding: 0 1rem;
-    background-color: #ffffff;
+}
+.about-musicians__quote {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .about-musicians__quote {
+    margin-bottom: 2.25rem;
   }
-  body .display-comments__card {
-    width: 100%;
-    display: flex;
-    border-bottom: 1px solid #e1e1e1;
-    justify-content: space-between;
-  }
-  body .display-comments__card-col1 {
-    width: 20%;
-  }
-  body .display-comments__avatar {
-    width: 100%;
-    border-radius: 50%;
-  }
-  body .display-comments__card-col2 {
-    width: 75%;
-  }
-  body .display-comments__heading-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  body .display-comments__card-header {
-    display: inline-block;
-  }
-  body .footer {
-    padding: 0 1rem;
-    background-color: #323232;
-    color: #ffffff;
-    font-size: 0.813rem;
-    line-height: 1.125rem;
-    font-weight: 400;
-  }
-  body .footer__header {
+}
+.about-musicians__sub-heading {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .about-musicians__sub-heading {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  body .footer__icon-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
-  }
-  body .footer__social-icon {
-    width: 1.8rem;
-    height: 2rem;
-    margin: 0 2rem 0 0;
-  }
-  body .footer__contact-name {
-    margin-top: 1rem;
-    font-weight: 700;
-  }
-  body .footer__contact-company {
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  body .footer__contact-email {
-    margin: 1rem 0;
-  }
-  body .footer__logo {
-    margin-top: 3rem;
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 500;
-    text-align: left;
-  }
-  body .footer__copyright {
-    margin: 1rem 0;
+    font-weight: 600;
+    margin-bottom: 2.25rem;
   }
 }
 @media only screen and (min-width: 48rem) {
-  body a:link {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body a:visited {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body a:hover {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body a:active {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body .nav {
-    background-color: #323232;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    height: 5rem;
-  }
-  body .nav__logo {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 500;
-    padding: 2rem;
-  }
-  body .nav__list {
-    list-style-type: none;
-    height: 100%;
-  }
-  body .nav__list a {
-    color: #e1e1e1;
-  }
-  body .nav__list a:link {
-    text-decoration: none;
-  }
-  body .nav__list a:visited {
-    text-decoration: none;
-  }
-  body .nav__list a:hover {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body .nav__list a:active {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body .nav__link {
-    width: 100%;
-    text-align: center;
-    padding: 1.6rem 0;
-    margin: 1.2rem;
-  }
-  body .nav__link:hover {
-    border-bottom: 0.4rem solid white;
-    color: #ffffff;
-    font-weight: 700;
-  }
-  body .nav__link:active {
-    border-bottom: 0.4rem solid white;
-    color: #ffffff;
-    font-weight: 700;
-  }
-  body .nav__link--active {
-    color: #ffffff;
-    border-bottom: 0.4rem solid white;
-    font-weight: 700;
-  }
-  body .hero {
-    width: 100%;
-  }
-  body .hero__heading {
-    font-size: 7.5vw;
-    transform: translate(5vw, 29vw);
-    font-weight: 700;
-    color: white;
-    position: absolute;
-    z-index: 1;
-  }
-  body .hero__overlay {
-    background-color: #323232;
-  }
-  body .hero__image {
-    z-index: -2;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 100%;
-    opacity: 50%;
-  }
-  body .about-musicians {
-    padding: 0 5.625rem;
-  }
-  body .about-musicians__heading {
-    padding: 0 2.25rem;
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-    font-weight: 700;
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
-  }
-  body .about-musicians__image {
-    width: 100%;
-    margin-bottom: 2.25rem;
-  }
-  body .about-musicians__quote {
-    font-weight: 700;
-    margin-bottom: 2.25rem;
-  }
-  body .about-musicians__sub-heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 600;
-    margin-bottom: 2.25rem;
-  }
-  body .about-musicians__copy {
+  .about-musicians__copy {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-  }
-  body .about-musicians__biography-paragraph {
-    width: 48%;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    font-weight: 400;
-    margin-bottom: 2.25rem;
-  }
-  body .photo-gallery {
-    padding: 0 2.25rem;
-    background-color: #fafafa;
-  }
-  body .photo-gallery__heading {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-    font-weight: 700;
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
-    padding-top: 3rem;
-  }
-  body .photo-gallery__image-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  body .photo-gallery__image {
-    width: 30%;
-    margin: 1.2vw;
-  }
-  body .footer {
-    position: relative;
-    padding: 0 2.25rem;
-    background-color: #323232;
-    color: #ffffff;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-  }
-  body .footer__line-break {
-    white-space: pre-line;
-  }
-  body .footer__header {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-    font-weight: 700;
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
-  }
-  body .footer__row {
-    width: 100%;
-    display: flex;
-  }
-  body .footer__contact-card {
-    width: 30%;
-    margin: 0 3vw;
-  }
-  body .footer__icon-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 2rem;
-  }
-  body .footer__social-icon {
-    width: 1.8rem;
-    height: 2rem;
-    margin: 0 2rem 0 0;
-  }
-  body .footer__contact-name {
-    margin-top: 2.25rem;
-    font-weight: 700;
-  }
-  body .footer__contact-company {
-    font-weight: 700;
-    margin-bottom: 2.25rem;
-  }
-  body .footer__contact-email {
-    margin: 2.25rem 0;
-  }
-  body .footer__logo {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 500;
-    text-align: left;
-    position: absolute;
-    position: absolute;
-    top: 0%;
-    left: calc(100% - 12rem);
-  }
-  body .footer__copyright {
-    margin: 2.25rem 0;
+    width: 40%;
   }
 }
-@media only screen and (min-width: 80rem) {
-  body a:link {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body a:visited {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body a:hover {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body a:active {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body .nav {
-    background-color: #323232;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    height: 5rem;
-  }
-  body .nav__logo {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 500;
-    padding: 2rem;
-  }
-  body .nav__list {
-    list-style-type: none;
-    height: 100%;
-  }
-  body .nav__list a {
-    color: #e1e1e1;
-  }
-  body .nav__list a:link {
-    text-decoration: none;
-  }
-  body .nav__list a:visited {
-    text-decoration: none;
-  }
-  body .nav__list a:hover {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body .nav__list a:active {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  body .nav__link {
-    width: 100%;
-    text-align: center;
-    padding: 1.6rem 0;
-    margin: 1.2rem;
-  }
-  body .nav__link:hover {
-    border-bottom: 0.4rem solid white;
-    color: #ffffff;
-    font-weight: 700;
-  }
-  body .nav__link:active {
-    border-bottom: 0.4rem solid white;
-    color: #ffffff;
-    font-weight: 700;
-  }
-  body .nav__link--active {
-    color: #ffffff;
-    border-bottom: 0.4rem solid white;
-    font-weight: 700;
-  }
-  body .hero {
-    width: 100%;
-  }
-  body .hero__heading {
-    font-size: 7.5vw;
-    transform: translate(5vw, 29vw);
-    font-weight: 700;
-    color: white;
-    position: absolute;
-    z-index: 1;
-  }
-  body .hero__overlay {
-    background-color: #323232;
-  }
-  body .hero__image {
-    z-index: -2;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 100%;
-    opacity: 50%;
-  }
-  body .hero .about-musicians {
-    padding: 0 11.25rem;
-  }
-  body .hero .about-musicians__heading {
-    padding: 0 2.25rem;
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-    font-weight: 700;
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
-  }
-  body .hero .about-musicians__image {
-    width: 100%;
-    margin-bottom: 2.25rem;
-  }
-  body .hero .about-musicians__quote {
-    font-weight: 700;
-    margin-bottom: 2.25rem;
-  }
-  body .hero .about-musicians__sub-heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 600;
-    margin-bottom: 2.25rem;
-  }
-  body .hero .about-musicians__copy {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  body .hero .about-musicians__biography-paragraph {
+.about-musicians__biography-paragraph {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .about-musicians__biography-paragraph {
     width: 48%;
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 400;
     margin-bottom: 2.25rem;
   }
-  body .hero .photo-gallery {
+}
+
+.photo-gallery {
+  padding: 0 1rem;
+  background-color: #fafafa;
+}
+@media only screen and (min-width: 48rem) {
+  .photo-gallery {
     padding: 0 2.25rem;
-    background-color: #fafafa;
   }
-  body .hero .photo-gallery__heading {
+}
+.photo-gallery__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+}
+@media only screen and (min-width: 48rem) {
+  .photo-gallery__heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
@@ -733,76 +329,165 @@ body {
     margin-bottom: 2.25rem;
     padding-top: 3rem;
   }
-  body .hero .photo-gallery__image-container {
+}
+@media only screen and (min-width: 48rem) {
+  .photo-gallery__image-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  body .hero .photo-gallery__image {
+}
+.photo-gallery__image {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .photo-gallery__image {
     width: 30%;
     margin: 1.2vw;
   }
-  body .hero .footer {
-    position: relative;
-    padding: 0 2.25rem;
-    background-color: #323232;
-    color: #ffffff;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-  }
-  body .hero .footer__line-break {
-    white-space: pre-line;
-  }
-  body .hero .footer__header {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-    font-weight: 700;
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
-  }
-  body .hero .footer__row {
-    width: 100%;
-    display: flex;
-  }
-  body .hero .footer__contact-card {
-    width: 15%;
-    margin: 0 3vw;
-  }
-  body .hero .footer__icon-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 2rem;
-  }
-  body .hero .footer__social-icon {
-    width: 1.8rem;
-    height: 2rem;
-    margin: 0 2rem 0 0;
-  }
-  body .hero .footer__contact-name {
-    margin-top: 2.25rem;
-    font-weight: 700;
-  }
-  body .hero .footer__contact-company {
-    font-weight: 700;
-    margin-bottom: 2.25rem;
-  }
-  body .hero .footer__contact-email {
-    margin: 2.25rem 0;
-  }
-  body .hero .footer__logo {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 500;
-    text-align: left;
-    position: absolute;
-    top: 0%;
-    left: calc(100% - 12rem);
-  }
-  body .hero .footer__copyright {
-    margin: 2.25rem 0;
-  }
+}
+
+.write-comments {
+  padding: 0 1rem;
+  background-color: #ffffff;
+}
+.write-comments__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+}
+.write-comments__form-container {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #e1e1e1;
+  justify-content: space-between;
+}
+.write-comments__col1-image {
+  width: 20%;
+}
+.write-comments__avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+.write-comments__col2-form {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.write-comments__form-label {
+  margin-bottom: 4px;
+  color: #e1e1e1;
+}
+.write-comments__input-name {
+  width: 100%;
+  border-radius: 4px;
+  padding: 4px;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 1.2rem;
+}
+.write-comments__input-name:active {
+  border: 1px solid #323232;
+}
+.write-comments__comment-area {
+  width: 100%;
+  border-radius: 4px;
+  padding: 4px;
+  border: 1px solid #e1e1e1;
+  height: 5rem;
+  resize: none;
+  margin-bottom: 1.2rem;
+}
+.write-comments__button {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #323232;
+  height: 40px;
+  border-radius: 4px;
+}
+.write-comments__button:hover {
+  background-color: #000000;
+}
+
+.display-comments {
+  padding: 0 1rem;
+  background-color: #ffffff;
+}
+.display-comments__card {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #e1e1e1;
+  justify-content: space-between;
+}
+.display-comments__card-col1 {
+  width: 20%;
+}
+.display-comments__avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+.display-comments__card-col2 {
+  width: 75%;
+}
+.display-comments__heading-row {
+  display: flex;
+  justify-content: space-between;
+}
+.display-comments__card-header {
+  display: inline-block;
+}
+
+.footer {
+  padding: 0 1rem;
+  background-color: #323232;
+  color: #ffffff;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+.footer__header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.footer__icon-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+.footer__social-icon {
+  width: 1.8rem;
+  height: 2rem;
+  margin: 0 2rem 0 0;
+}
+.footer__contact-name {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+.footer__contact-company {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.footer__contact-email {
+  margin: 1rem 0;
+}
+.footer__logo {
+  margin-top: 3rem;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  text-align: left;
+}
+.footer__copyright {
+  margin: 1rem 0;
 }/*# sourceMappingURL=bio.css.map */

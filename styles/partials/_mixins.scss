@@ -3,7 +3,6 @@
 @use "./tablet-styles";
 @use "./desktop-styles";
 
-
 @mixin devices($breakpoint) {
   @if $breakpoint == tablet {
     @media only screen and (min-width: variables.$break-tablet) {
@@ -16,24 +15,4 @@
       @content;
     }
   }
-
-  @if $breakpoint == mobile {
-    @media only screen and (min-width: variables.$break-mobile) {
-      @content;
-    }
-  }
-}
-
-@mixin mobile-styles {
-  @include mobile-styles.m-styles;
-}
-
-@mixin tablet-styles {
-  @include tablet-styles.t-styles;
-
-}
-
-@mixin desktop-styles {
-  @include desktop-styles.d-styles;
-
 }
