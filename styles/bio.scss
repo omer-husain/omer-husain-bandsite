@@ -46,17 +46,15 @@ body {
 
   &__logo {
     padding: 0.5rem;
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
     text-align: center;
-    // width: 100%;
-    // max-height: 20px;
 
     @include mixins.devices(tablet) {
-      ont-size: 1.5rem;
+      font-size: 2rem;
       line-height: 2rem;
-      font-weight: 500;
+      font-weight: 600;
       padding: 2rem;
     }
   }
@@ -75,6 +73,7 @@ body {
 
   &__list a {
     color: colours.$Mercury;
+    font-size: 1.5rem;
 
     &:link {
       text-decoration: none;
@@ -134,46 +133,36 @@ body {
 }
 
 .hero {
-  width: 100%;
-  // position: relative;
-
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 20rem;
+  position: relative;
+  overflow: hidden;
+  @include mixins.devices(tablet) {
+    height: 31.9rem;
+  }
+  @include mixins.devices(desktop) {
+    height: 60vh;
+  }
   &__heading {
-    font-size: 7.5vw;
-    transform: translate(5vw, 29vw);
+    font-size: 2.8rem;
     font-weight: 700;
-    color: white;
-    position: absolute;
-    z-index: 1;
-  }
-
-  &__sub-heading {
-    font-size: 3.5vw;
-    transform: translate(5vw, 10vw);
-    font-weight: 700;
-    color: white;
-    position: absolute;
-    z-index: 1;
-  }
-
-  &__soundcloud {
-    // transform: translate(5vw, 15vw);
-    // position: absolute;
-    // z-index: 1;
-  }
-
-  &__overlay {
-    background-color: colours.$BandSite-Black;
-    position: absolute;
-    z-index: 0;
-  }
-
-  &__image {
-    z-index: -2;
-    margin-left: auto;
-    margin-right: auto;
+    color: colours.$White;
+    background-color: rgba(32, 32, 32, 0.5);
+    height: 100%;
     width: 100%;
-    height: 109%;
-    opacity: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    @include mixins.devices(tablet) {
+      padding-left: 3rem;
+    }
+    @include mixins.devices(desktop) {
+      padding-left: 5rem;
+    }
   }
 }
 
@@ -234,7 +223,12 @@ body {
     padding: 0 variables.$margin-tablet-LR * 2.5;
   }
 
+  @include mixins.devices(desktop) {
+    padding: 0 variables.$margin-desktop-LR * 6;
+  }
+
   &__heading {
+    padding: 0 variables.$margin-mobile-LR;
     font-size: map.get(m.$section-header, "text-size");
     line-height: map.get(m.$section-header, "line-height");
     font-weight: map.get(m.$section-header, "text-weight");
@@ -249,6 +243,15 @@ body {
       margin-top: variables.$margin-top-headline-tablet;
       margin-bottom: variables.$margin-bottom-headline-tablet;
     }
+
+    @include mixins.devices(desktop) {
+      padding: 0 variables.$margin-desktop-LR;
+      font-size: map.get(d.$section-header, "text-size");
+      line-height: map.get(d.$section-header, "line-height");
+      font-weight: map.get(d.$section-header, "text-weight");
+      margin-top: variables.$margin-top-headline-desktop;
+      margin-bottom: variables.$margin-bottom-headline-desktop;
+    }
   }
 
   &__image {
@@ -258,9 +261,14 @@ body {
     @include mixins.devices(tablet) {
       margin-bottom: variables.$margin-bottom-headline-tablet;
     }
+
+    @include mixins.devices(desktop) {
+      margin-bottom: variables.$margin-bottom-headline-desktop;
+    }
   }
 
   &__quote {
+    font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: variables.$margin-bottom-headline-mobile;
 
@@ -281,6 +289,13 @@ body {
       font-weight: map.get(t.$section-subheader, "text-weight");
       margin-bottom: variables.$margin-bottom-headline-tablet;
     }
+
+    @include mixins.devices(desktop) {
+      font-size: map.get(d.$section-subheader, "text-size");
+      line-height: map.get(d.$section-subheader, "line-height");
+      font-weight: map.get(d.$section-subheader, "text-weight");
+      margin-bottom: variables.$margin-bottom-headline-desktop;
+    }
   }
 
   &__copy {
@@ -288,7 +303,6 @@ body {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      width: 40%;
     }
   }
 
@@ -305,6 +319,14 @@ body {
       font-weight: map.get(t.$body-copy, "text-weight");
       margin-bottom: variables.$margin-bottom-headline-tablet;
     }
+
+    @include mixins.devices(desktop) {
+      width: 48%;
+      font-size: map.get(d.$body-copy, "text-size");
+      line-height: map.get(d.$body-copy, "line-height");
+      font-weight: map.get(d.$body-copy, "text-weight");
+      margin-bottom: variables.$margin-bottom-headline-desktop;
+    }
   }
 }
 
@@ -314,6 +336,10 @@ body {
 
   @include mixins.devices(tablet) {
     padding: 0 variables.$margin-tablet-LR;
+  }
+
+  @include mixins.devices(desktop) {
+    padding: 0 variables.$margin-desktop-LR;
   }
 
   &__heading {
@@ -331,6 +357,15 @@ body {
       margin-top: variables.$margin-top-headline-tablet;
       margin-bottom: variables.$margin-bottom-headline-tablet;
       padding-top: variables.$margin-top-headline-tablet;
+    }
+
+    @include mixins.devices(desktop) {
+      font-size: map.get(d.$section-header, "text-size");
+      line-height: map.get(d.$section-header, "line-height");
+      font-weight: map.get(d.$section-header, "text-weight");
+      margin-top: variables.$margin-top-headline-desktop;
+      margin-bottom: variables.$margin-bottom-headline-desktop;
+      padding-top: variables.$margin-top-headline-desktop;
     }
   }
 
@@ -358,6 +393,24 @@ body {
   padding: 0 variables.$margin-mobile-LR;
   background-color: colours.$White;
 
+  font-size: map.get(m.$body-copy, "text-size");
+  line-height: map.get(m.$body-copy, "line-height");
+  font-weight: map.get(m.$body-copy, "text-weight");
+
+  @include mixins.devices(tablet) {
+    padding: 0 variables.$margin-tablet-LR * 5;
+    font-size: map.get(t.$body-copy, "text-size");
+    line-height: map.get(t.$body-copy, "line-height");
+    font-weight: map.get(t.$body-copy, "text-weight");
+  }
+
+  @include mixins.devices(desktop) {
+    padding: 0 variables.$margin-desktop-LR * 10;
+    font-size: map.get(d.$body-copy, "text-size");
+    line-height: map.get(d.$body-copy, "line-height");
+    font-weight: map.get(d.$body-copy, "text-weight");
+  }
+
   &__heading {
     font-size: map.get(m.$section-header, "text-size");
     line-height: map.get(m.$section-header, "line-height");
@@ -365,6 +418,15 @@ body {
     margin-top: variables.$margin-top-headline-mobile;
     margin-bottom: variables.$margin-bottom-headline-mobile;
     padding-top: variables.$margin-top-headline-mobile;
+
+    @include mixins.devices(tablet) {
+      font-size: map.get(t.$section-header, "text-size");
+      line-height: map.get(t.$section-header, "line-height");
+      font-weight: map.get(t.$section-header, "text-weight");
+      margin-top: variables.$margin-top-headline-tablet;
+      margin-bottom: variables.$margin-bottom-headline-tablet;
+      padding-top: variables.$margin-top-headline-tablet;
+    }
   }
 
   &__form-container {
@@ -375,7 +437,7 @@ body {
   }
 
   &__col1-image {
-    width: 20%;
+    width: 15%;
   }
   &__avatar {
     width: 100%;
@@ -400,6 +462,15 @@ body {
     padding: 4px;
     border: 1px solid colours.$Mercury;
     margin-bottom: 1.2rem;
+    font-size: map.get(m.$body-copy, "text-size");
+    line-height: map.get(m.$body-copy, "line-height");
+    font-weight: map.get(m.$body-copy, "text-weight");
+
+    @include mixins.devices(tablet) {
+      font-size: map.get(t.$body-copy, "text-size");
+      line-height: map.get(t.$body-copy, "line-height");
+      font-weight: map.get(t.$body-copy, "text-weight");
+    }
 
     &:active {
       border: 1px solid colours.$BandSite-Black;
@@ -417,8 +488,16 @@ body {
     height: 5rem;
     resize: none;
     margin-bottom: 1.2rem;
-  }
+    font-size: map.get(m.$body-copy, "text-size");
+    line-height: map.get(m.$body-copy, "line-height");
+    font-weight: map.get(m.$body-copy, "text-weight");
 
+    @include mixins.devices(tablet) {
+      font-size: map.get(t.$body-copy, "text-size");
+      line-height: map.get(t.$body-copy, "line-height");
+      font-weight: map.get(t.$body-copy, "text-weight");
+    }
+  }
   &__button {
     font-size: map.get(m.$button-text, "text-size");
     line-height: map.get(m.$button-text, "line-height");
@@ -438,6 +517,24 @@ body {
   padding: 0 variables.$margin-mobile-LR;
   background-color: colours.$White;
 
+  font-size: map.get(m.$body-copy, "text-size");
+  line-height: map.get(m.$body-copy, "line-height");
+  font-weight: map.get(m.$body-copy, "text-weight");
+
+  @include mixins.devices(tablet) {
+    padding: 0 variables.$margin-tablet-LR * 5;
+    font-size: map.get(t.$body-copy, "text-size");
+    line-height: map.get(t.$body-copy, "line-height");
+    font-weight: map.get(t.$body-copy, "text-weight");
+  }
+
+  @include mixins.devices(desktop) {
+    padding: 0 variables.$margin-desktop-LR * 10;
+    font-size: map.get(d.$body-copy, "text-size");
+    line-height: map.get(d.$body-copy, "line-height");
+    font-weight: map.get(d.$body-copy, "text-weight");
+  }
+
   &__card {
     width: 100%;
     display: flex;
@@ -455,10 +552,23 @@ body {
   }
 
   &__card-col2 {
+    height: 90%;
     width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @include mixins.devices(tablet) {
+      height: 15rem;
+    }
   }
 
   &__heading-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__likes-row {
     display: flex;
     justify-content: space-between;
   }
@@ -476,12 +586,71 @@ body {
   line-height: map.get(m.$footer-copy, "line-height");
   font-weight: map.get(m.$footer-copy, "text-weight");
 
+  @include mixins.devices(tablet) {
+    position: relative;
+    padding: 0 variables.$margin-tablet-LR;
+    background-color: colours.$BandSite-Black;
+    color: colours.$White;
+
+    font-size: map.get(t.$footer-copy, "text-size");
+    line-height: map.get(t.$footer-copy, "line-height");
+    font-weight: map.get(t.$footer-copy, "text-weight");
+  }
+
+  @include mixins.devices(desktop) {
+    padding: 0 variables.$margin-desktop-LR;
+    background-color: colours.$BandSite-Black;
+    font-size: map.get(d.$footer-copy, "text-size");
+    line-height: map.get(d.$footer-copy, "line-height");
+    font-weight: map.get(d.$footer-copy, "text-weight");
+  }
+
+  &__line-break {
+    @include mixins.devices(tablet) {
+      white-space: pre-line;
+    }
+  }
+
   &__header {
     font-size: map.get(m.$section-header, "text-size");
     line-height: map.get(m.$section-header, "line-height");
     font-weight: map.get(m.$section-header, "text-weight");
     margin-top: variables.$margin-top-headline-mobile;
     margin-bottom: variables.$margin-bottom-headline-mobile;
+
+    @include mixins.devices(tablet) {
+      font-size: map.get(t.$section-header, "text-size");
+      line-height: map.get(t.$section-header, "line-height");
+      font-weight: map.get(t.$section-header, "text-weight");
+      margin-top: variables.$margin-top-headline-tablet;
+      margin-bottom: variables.$margin-bottom-headline-tablet;
+    }
+
+    @include mixins.devices(desktop) {
+      font-size: map.get(d.$section-header, "text-size");
+      line-height: map.get(d.$section-header, "line-height");
+      font-weight: map.get(d.$section-header, "text-weight");
+      margin-top: variables.$margin-top-headline-desktop;
+      margin-bottom: variables.$margin-bottom-headline-desktop;
+    }
+  }
+
+  &__row {
+    @include mixins.devices(tablet) {
+      width: 100%;
+      display: flex;
+    }
+  }
+
+  &__contact-card {
+    @include mixins.devices(tablet) {
+      width: 30%;
+      margin: 0 3vw;
+    }
+    @include mixins.devices(desktop) {
+      width: 15%;
+      margin: 0 3vw;
+    }
   }
 
   &__icon-list {
@@ -489,6 +658,11 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: variables.$margin-mobile-between-components;
+
+    @include mixins.devices(tablet) {
+      align-items: center;
+      margin: 0 2rem;
+    }
   }
 
   &__social-icon {
@@ -500,538 +674,59 @@ body {
   &__contact-name {
     margin-top: variables.$margin-mobile-between-components;
     font-weight: 700;
+    @include mixins.devices(tablet) {
+      margin-top: variables.$margin-tablet-between-components;
+    }
+    @include mixins.devices(desktop) {
+      margin-top: variables.$margin-desktop-between-components;
+    }
   }
 
   &__contact-company {
     font-weight: 700;
     margin-bottom: variables.$margin-mobile-between-components;
+    @include mixins.devices(tablet) {
+      margin-bottom: variables.$margin-tablet-between-components;
+    }
+    @include mixins.devices(desktop) {
+      margin-bottom: variables.$margin-desktop-between-components;
+    }
   }
 
   &__contact-email {
     margin: variables.$margin-mobile-between-components 0;
+    @include mixins.devices(tablet) {
+      margin: variables.$margin-tablet-between-components 0;
+    }
   }
 
   &__logo {
     // padding: 0.5rem;
     margin-top: 3rem;
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
     text-align: left;
+
+    @include mixins.devices(tablet) {
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: 600;
+      text-align: left;
+      position: absolute;
+      position: absolute;
+      top: 0%;
+      left: calc(100% - 12rem);
+    }
   }
 
   &__copyright {
     margin: variables.$margin-mobile-between-components 0;
+    @include mixins.devices(tablet) {
+      margin: variables.$margin-tablet-between-components 0;
+    }
+    @include mixins.devices(desktop) {
+      margin: variables.$margin-desktop-between-components 0;
+    }
   }
 }
-
-// @include mixins.devices(tablet) {
-//   a {
-//     &:link {
-//       text-decoration: none;
-//       color: colours.$White;
-//     }
-//     &:visited {
-//       text-decoration: none;
-//       color: colours.$White;
-//     }
-//     &:hover {
-//       text-decoration: none;
-//       color: colours.$White;
-//     }
-//     &:active {
-//       text-decoration: none;
-//       color: colours.$White;
-//     }
-//   }
-
-//   .nav {
-//     background-color: colours.$BandSite-Black;
-//     color: colours.$White;
-//     display: flex;
-//     align-items: center;
-//     height: 5rem;
-
-//     &__logo {
-//       font-size: 1.5rem;
-//       line-height: 2rem;
-//       font-weight: 500;
-//       padding: 2rem;
-//     }
-
-//     &__list {
-//       list-style-type: none;
-//       height: 100%;
-
-//       // margin-right: 5rem;
-//     }
-
-//     &__list a {
-//       color: colours.$Mercury;
-
-//       &:link {
-//         text-decoration: none;
-//       }
-//       &:visited {
-//         text-decoration: none;
-//       }
-//       &:hover {
-//         text-decoration: none;
-//         color: colours.$White;
-//       }
-//       &:active {
-//         text-decoration: none;
-//         color: colours.$White;
-//       }
-//     }
-
-//     &__link {
-//       width: 100%;
-//       text-align: center;
-//       padding: 1.6rem 0;
-//       margin: 1.2rem;
-//       &:hover {
-//         border-bottom: 0.4rem solid white;
-//         color: colours.$White;
-//         font-weight: 700;
-//       }
-//       &:active {
-//         border-bottom: 0.4rem solid white;
-//         color: colours.$White;
-//         font-weight: 700;
-//       }
-//     }
-
-//     &__link--active {
-//       color: colours.$White;
-//       border-bottom: 0.4rem solid white;
-//       font-weight: 700;
-//     }
-//   }
-
-//   .hero {
-//     width: 100%;
-
-//     &__heading {
-//       font-size: 7.5vw;
-//       transform: translate(5vw, 29vw);
-//       font-weight: 700;
-//       color: white;
-//       position: absolute;
-//       z-index: 1;
-//     }
-
-//     &__overlay {
-//       background-color: colours.$BandSite-Black;
-//     }
-
-//     &__image {
-//       z-index: -2;
-//       margin-left: auto;
-//       margin-right: auto;
-//       width: 100%;
-//       height: 100%;
-//       opacity: 50%;
-//     }
-//   }
-
-//   .about-musicians {
-//     padding: 0 variables.$margin-tablet-LR * 2.5;
-
-//     &__heading {
-//       padding: 0 variables.$margin-tablet-LR;
-//       font-size: map.get(t.$section-header, "text-size");
-//       line-height: map.get(t.$section-header, "line-height");
-//       font-weight: map.get(t.$section-header, "text-weight");
-//       margin-top: variables.$margin-top-headline-tablet;
-//       margin-bottom: variables.$margin-bottom-headline-tablet;
-//     }
-
-//     &__image {
-//       width: 100%;
-//       margin-bottom: variables.$margin-bottom-headline-tablet;
-//     }
-
-//     &__quote {
-//       font-weight: 700;
-//       margin-bottom: variables.$margin-bottom-headline-tablet;
-//     }
-
-//     &__sub-heading {
-//       font-size: map.get(t.$section-subheader, "text-size");
-//       line-height: map.get(t.$section-subheader, "line-height");
-//       font-weight: map.get(t.$section-subheader, "text-weight");
-//       margin-bottom: variables.$margin-bottom-headline-tablet;
-//     }
-
-//     &__copy {
-//       display: flex;
-//       justify-content: space-between;
-//       flex-wrap: wrap;
-//       // width: 40%;
-//     }
-
-//     &__biography-paragraph {
-//       width: 48%;
-//       font-size: map.get(t.$body-copy, "text-size");
-//       line-height: map.get(t.$body-copy, "line-height");
-//       font-weight: map.get(t.$body-copy, "text-weight");
-//       margin-bottom: variables.$margin-bottom-headline-tablet;
-//     }
-//   }
-
-//   .photo-gallery {
-//     padding: 0 variables.$margin-tablet-LR;
-//     background-color: colours.$Alabaster;
-//     &__heading {
-//       font-size: map.get(t.$section-header, "text-size");
-//       line-height: map.get(t.$section-header, "line-height");
-//       font-weight: map.get(t.$section-header, "text-weight");
-//       margin-top: variables.$margin-top-headline-tablet;
-//       margin-bottom: variables.$margin-bottom-headline-tablet;
-//       padding-top: variables.$margin-top-headline-tablet;
-//     }
-
-//     &__image-container {
-//       width: 100%;
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//     }
-
-//     &__image {
-//       width: 30%;
-//       margin: 1.2vw;
-//       // margin-bottom: variables.$margin-tablet-between-components;
-//     }
-//   }
-
-//   .footer {
-//     position: relative;
-//     padding: 0 variables.$margin-tablet-LR;
-//     background-color: colours.$BandSite-Black;
-//     color: colours.$White;
-
-//     font-size: map.get(t.$footer-copy, "text-size");
-//     line-height: map.get(t.$footer-copy, "line-height");
-//     font-weight: map.get(t.$footer-copy, "text-weight");
-
-//     &__line-break {
-//       white-space: pre-line;
-//     }
-
-//     &__header {
-//       font-size: map.get(t.$section-header, "text-size");
-//       line-height: map.get(t.$section-header, "line-height");
-//       font-weight: map.get(t.$section-header, "text-weight");
-//       margin-top: variables.$margin-top-headline-tablet;
-//       margin-bottom: variables.$margin-bottom-headline-tablet;
-//     }
-
-//     &__row {
-//       width: 100%;
-//       display: flex;
-//     }
-
-//     &__contact-card {
-//       width: 30%;
-//       margin: 0 3vw;
-//     }
-
-//     &__icon-list {
-//       display: flex;
-//       flex-direction: row;
-//       justify-content: flex-start;
-//       align-items: center;
-//       margin: 0 2rem;
-//     }
-
-//     &__social-icon {
-//       width: 1.8rem;
-//       height: 2rem;
-//       margin: 0 2rem 0 0;
-//     }
-
-//     &__contact-name {
-//       margin-top: variables.$margin-tablet-between-components;
-//       font-weight: 700;
-//     }
-
-//     &__contact-company {
-//       font-weight: 700;
-//       margin-bottom: variables.$margin-tablet-between-components;
-//     }
-
-//     &__contact-email {
-//       margin: variables.$margin-tablet-between-components 0;
-//     }
-
-//     &__logo {
-//       font-size: 1.5rem;
-//       line-height: 2rem;
-//       font-weight: 500;
-//       text-align: left;
-//       position: absolute;
-//       position: absolute;
-//       top: 0%;
-//       left: calc(100% - 12rem);
-//     }
-
-//     &__copyright {
-//       margin: variables.$margin-tablet-between-components 0;
-//     }
-//   }
-
-//   @include mixins.devices(desktop) {
-//     a {
-//       &:link {
-//         text-decoration: none;
-//         color: colours.$White;
-//       }
-//       &:visited {
-//         text-decoration: none;
-//         color: colours.$White;
-//       }
-//       &:hover {
-//         text-decoration: none;
-//         color: colours.$White;
-//       }
-//       &:active {
-//         text-decoration: none;
-//         color: colours.$White;
-//       }
-//     }
-
-//     .nav {
-//       background-color: colours.$BandSite-Black;
-//       color: colours.$White;
-//       display: flex;
-//       align-items: center;
-//       height: 5rem;
-
-//       &__logo {
-//         font-size: 1.5rem;
-//         line-height: 2rem;
-//         font-weight: 500;
-//         padding: 2rem;
-//       }
-
-//       &__list {
-//         list-style-type: none;
-//         height: 100%;
-//       }
-
-//       &__list a {
-//         color: colours.$Mercury;
-
-//         &:link {
-//           text-decoration: none;
-//         }
-//         &:visited {
-//           text-decoration: none;
-//         }
-//         &:hover {
-//           text-decoration: none;
-//           color: colours.$White;
-//         }
-//         &:active {
-//           text-decoration: none;
-//           color: colours.$White;
-//         }
-//       }
-
-//       &__link {
-//         width: 100%;
-//         text-align: center;
-//         padding: 1.6rem 0;
-//         margin: 1.2rem;
-//         &:hover {
-//           border-bottom: 0.4rem solid white;
-//           color: colours.$White;
-//           font-weight: 700;
-//         }
-//         &:active {
-//           border-bottom: 0.4rem solid white;
-//           color: colours.$White;
-//           font-weight: 700;
-//         }
-//       }
-
-//       &__link--active {
-//         color: colours.$White;
-//         border-bottom: 0.4rem solid white;
-//         font-weight: 700;
-//       }
-//     }
-
-//     .hero {
-//       width: 100%;
-
-//       &__heading {
-//         font-size: 7.5vw;
-//         transform: translate(5vw, 29vw);
-//         font-weight: 700;
-//         color: white;
-//         position: absolute;
-//         z-index: 1;
-//       }
-
-//       &__overlay {
-//         background-color: colours.$BandSite-Black;
-//       }
-
-//       &__image {
-//         z-index: -2;
-//         margin-left: auto;
-//         margin-right: auto;
-//         width: 100%;
-//         height: 100%;
-//         opacity: 50%;
-//       }
-
-//       .about-musicians {
-//         padding: 0 variables.$margin-desktop-LR * 5;
-
-//         &__heading {
-//           padding: 0 variables.$margin-desktop-LR;
-//           font-size: map.get(d.$section-header, "text-size");
-//           line-height: map.get(d.$section-header, "line-height");
-//           font-weight: map.get(d.$section-header, "text-weight");
-//           margin-top: variables.$margin-top-headline-desktop;
-//           margin-bottom: variables.$margin-bottom-headline-desktop;
-//         }
-
-//         &__image {
-//           width: 100%;
-//           margin-bottom: variables.$margin-bottom-headline-desktop;
-//         }
-
-//         &__quote {
-//           font-weight: 700;
-//           margin-bottom: variables.$margin-bottom-headline-desktop;
-//         }
-
-//         &__sub-heading {
-//           font-size: map.get(d.$section-subheader, "text-size");
-//           line-height: map.get(d.$section-subheader, "line-height");
-//           font-weight: map.get(d.$section-subheader, "text-weight");
-//           margin-bottom: variables.$margin-bottom-headline-desktop;
-//         }
-
-//         &__copy {
-//           display: flex;
-//           justify-content: space-between;
-//           flex-wrap: wrap;
-//         }
-
-//         &__biography-paragraph {
-//           width: 48%;
-//           font-size: map.get(d.$body-copy, "text-size");
-//           line-height: map.get(d.$body-copy, "line-height");
-//           font-weight: map.get(d.$body-copy, "text-weight");
-//           margin-bottom: variables.$margin-bottom-headline-desktop;
-//         }
-//       }
-
-//       .photo-gallery {
-//         padding: 0 variables.$margin-desktop-LR;
-//         background-color: colours.$Alabaster;
-//         &__heading {
-//           font-size: map.get(d.$section-header, "text-size");
-//           line-height: map.get(d.$section-header, "line-height");
-//           font-weight: map.get(d.$section-header, "text-weight");
-//           margin-top: variables.$margin-top-headline-desktop;
-//           margin-bottom: variables.$margin-bottom-headline-desktop;
-//           padding-top: variables.$margin-top-headline-desktop;
-//         }
-
-//         &__image-container {
-//           width: 100%;
-//           display: flex;
-//           justify-content: space-between;
-//           align-items: center;
-//         }
-
-//         &__image {
-//           width: 30%;
-//           margin: 1.2vw;
-//         }
-//       }
-
-//       .footer {
-//         position: relative;
-//         padding: 0 variables.$margin-desktop-LR;
-//         background-color: colours.$BandSite-Black;
-//         color: colours.$White;
-
-//         font-size: map.get(d.$footer-copy, "text-size");
-//         line-height: map.get(d.$footer-copy, "line-height");
-//         font-weight: map.get(d.$footer-copy, "text-weight");
-
-//         &__line-break {
-//           white-space: pre-line;
-//         }
-
-//         &__header {
-//           font-size: map.get(d.$section-header, "text-size");
-//           line-height: map.get(d.$section-header, "line-height");
-//           font-weight: map.get(d.$section-header, "text-weight");
-//           margin-top: variables.$margin-top-headline-desktop;
-//           margin-bottom: variables.$margin-bottom-headline-desktop;
-//         }
-
-//         &__row {
-//           width: 100%;
-//           display: flex;
-//         }
-
-//         &__contact-card {
-//           width: 15%;
-//           margin: 0 3vw;
-//         }
-
-//         &__icon-list {
-//           display: flex;
-//           flex-direction: row;
-//           justify-content: flex-start;
-//           align-items: center;
-//           margin: 0 2rem;
-//         }
-
-//         &__social-icon {
-//           width: 1.8rem;
-//           height: 2rem;
-//           margin: 0 2rem 0 0;
-//         }
-
-//         &__contact-name {
-//           margin-top: variables.$margin-desktop-between-components;
-//           font-weight: 700;
-//         }
-
-//         &__contact-company {
-//           font-weight: 700;
-//           margin-bottom: variables.$margin-desktop-between-components;
-//         }
-
-//         &__contact-email {
-//           margin: variables.$margin-desktop-between-components 0;
-//         }
-
-//         &__logo {
-//           font-size: 1.5rem;
-//           line-height: 2rem;
-//           font-weight: 500;
-//           text-align: left;
-//           position: absolute;
-//           top: 0%;
-//           left: calc(100% - 12rem);
-//         }
-
-//         &__copyright {
-//           margin: variables.$margin-desktop-between-components 0;
-//         }
-//       }
-//     }
-//   }
-// }

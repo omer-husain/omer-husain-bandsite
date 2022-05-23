@@ -62,16 +62,16 @@ body a:active {
 }
 .nav__logo {
   padding: 0.5rem;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
   text-align: center;
 }
 @media only screen and (min-width: 48rem) {
   .nav__logo {
-    ont-size: 1.5rem;
+    font-size: 2rem;
     line-height: 2rem;
-    font-weight: 500;
+    font-weight: 600;
     padding: 2rem;
   }
 }
@@ -89,6 +89,7 @@ body a:active {
 }
 .nav__list a {
   color: #e1e1e1;
+  font-size: 1.5rem;
 }
 .nav__list a:link {
   text-decoration: none;
@@ -147,45 +148,54 @@ body a:active {
 }
 
 .hero {
-  width: 100%;
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 20rem;
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (min-width: 48rem) {
+  .hero {
+    height: 31.9rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .hero {
+    height: 60vh;
+  }
 }
 .hero__heading {
-  font-size: 7.5vw;
-  transform: translate(5vw, 29vw);
+  font-size: 2.8rem;
   font-weight: 700;
-  color: white;
-  position: absolute;
-  z-index: 1;
-}
-.hero__sub-heading {
-  font-size: 3.5vw;
-  transform: translate(5vw, 10vw);
-  font-weight: 700;
-  color: white;
-  position: absolute;
-  z-index: 1;
-}
-.hero__overlay {
-  background-color: #323232;
-  position: absolute;
-  z-index: 0;
-}
-.hero__image {
-  z-index: -2;
-  margin-left: auto;
-  margin-right: auto;
+  color: #ffffff;
+  background-color: rgba(32, 32, 32, 0.5);
+  height: 100%;
   width: 100%;
-  height: 109%;
-  opacity: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 2rem;
+}
+@media only screen and (min-width: 48rem) {
+  .hero__heading {
+    padding-left: 3rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .hero__heading {
+    padding-left: 5rem;
+  }
 }
 
 .shows {
-  padding: 0 1rem;
+  padding: 0 1.8rem;
   background-color: #ffffff;
 }
 .shows__heading {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
@@ -223,25 +233,41 @@ body a:active {
 }
 
 .about-musicians {
-  padding: 0 1rem;
+  padding: 0 1.8rem;
 }
 @media only screen and (min-width: 48rem) {
   .about-musicians {
-    padding: 0 5.625rem;
+    padding: 0 6rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .about-musicians {
+    padding: 0 14.4rem;
   }
 }
 .about-musicians__heading {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  padding: 0 1.8rem;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 @media only screen and (min-width: 48rem) {
   .about-musicians__heading {
-    padding: 0 2.25rem;
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    padding: 0 2.4rem;
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 2.25rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .about-musicians__heading {
+    padding: 0 2.4rem;
+    font-size: 2.8rem;
+    line-height: 3.2rem;
     font-weight: 700;
     margin-top: 3rem;
     margin-bottom: 2.25rem;
@@ -256,7 +282,13 @@ body a:active {
     margin-bottom: 2.25rem;
   }
 }
+@media only screen and (min-width: 80rem) {
+  .about-musicians__image {
+    margin-bottom: 2.25rem;
+  }
+}
 .about-musicians__quote {
+  font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -266,15 +298,23 @@ body a:active {
   }
 }
 .about-musicians__sub-heading {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 @media only screen and (min-width: 48rem) {
   .about-musicians__sub-heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 2.25rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .about-musicians__sub-heading {
+    font-size: 2rem;
+    line-height: 2.4rem;
     font-weight: 600;
     margin-bottom: 2.25rem;
   }
@@ -284,37 +324,50 @@ body a:active {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 40%;
   }
 }
 .about-musicians__biography-paragraph {
-  font-size: 0.813rem;
-  line-height: 1.125rem;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
   font-weight: 400;
   margin-bottom: 1rem;
 }
 @media only screen and (min-width: 48rem) {
   .about-musicians__biography-paragraph {
     width: 48%;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 2.25rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .about-musicians__biography-paragraph {
+    width: 48%;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
     font-weight: 400;
     margin-bottom: 2.25rem;
   }
 }
 
 .photo-gallery {
-  padding: 0 1rem;
+  padding: 0 1.8rem;
   background-color: #fafafa;
 }
 @media only screen and (min-width: 48rem) {
   .photo-gallery {
-    padding: 0 2.25rem;
+    padding: 0 2.4rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .photo-gallery {
+    padding: 0 2.4rem;
   }
 }
 .photo-gallery__heading {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
@@ -322,8 +375,18 @@ body a:active {
 }
 @media only screen and (min-width: 48rem) {
   .photo-gallery__heading {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 2.25rem;
+    padding-top: 3rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .photo-gallery__heading {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
     font-weight: 700;
     margin-top: 3rem;
     margin-bottom: 2.25rem;
@@ -350,16 +413,45 @@ body a:active {
 }
 
 .write-comments {
-  padding: 0 1rem;
+  padding: 0 1.8rem;
   background-color: #ffffff;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 48rem) {
+  .write-comments {
+    padding: 0 12rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .write-comments {
+    padding: 0 24rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
 }
 .write-comments__heading {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   padding-top: 1.5rem;
+}
+@media only screen and (min-width: 48rem) {
+  .write-comments__heading {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 2.25rem;
+    padding-top: 3rem;
+  }
 }
 .write-comments__form-container {
   width: 100%;
@@ -368,7 +460,7 @@ body a:active {
   justify-content: space-between;
 }
 .write-comments__col1-image {
-  width: 20%;
+  width: 15%;
 }
 .write-comments__avatar {
   width: 100%;
@@ -390,6 +482,16 @@ body a:active {
   padding: 4px;
   border: 1px solid #e1e1e1;
   margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 48rem) {
+  .write-comments__input-name {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
 }
 .write-comments__input-name:active {
   border: 1px solid #323232;
@@ -402,6 +504,16 @@ body a:active {
   height: 5rem;
   resize: none;
   margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 48rem) {
+  .write-comments__comment-area {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
 }
 .write-comments__button {
   font-size: 0.625rem;
@@ -417,8 +529,27 @@ body a:active {
 }
 
 .display-comments {
-  padding: 0 1rem;
+  padding: 0 1.8rem;
   background-color: #ffffff;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 48rem) {
+  .display-comments {
+    padding: 0 12rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .display-comments {
+    padding: 0 24rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
 }
 .display-comments__card {
   width: 100%;
@@ -434,9 +565,22 @@ body a:active {
   border-radius: 50%;
 }
 .display-comments__card-col2 {
+  height: 90%;
   width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+@media only screen and (min-width: 48rem) {
+  .display-comments__card-col2 {
+    height: 15rem;
+  }
 }
 .display-comments__heading-row {
+  display: flex;
+  justify-content: space-between;
+}
+.display-comments__likes-row {
   display: flex;
   justify-content: space-between;
 }
@@ -445,25 +589,92 @@ body a:active {
 }
 
 .footer {
-  padding: 0 1rem;
+  padding: 0 1.8rem;
   background-color: #323232;
   color: #ffffff;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
   font-weight: 400;
 }
+@media only screen and (min-width: 48rem) {
+  .footer {
+    position: relative;
+    padding: 0 2.4rem;
+    background-color: #323232;
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 400;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .footer {
+    padding: 0 2.4rem;
+    background-color: #323232;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 400;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .footer__line-break {
+    white-space: pre-line;
+  }
+}
 .footer__header {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .footer__header {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 2.25rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .footer__header {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 2.25rem;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .footer__row {
+    width: 100%;
+    display: flex;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .footer__contact-card {
+    width: 30%;
+    margin: 0 3vw;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .footer__contact-card {
+    width: 15%;
+    margin: 0 3vw;
+  }
 }
 .footer__icon-list {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   margin-bottom: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .footer__icon-list {
+    align-items: center;
+    margin: 0 2rem;
+  }
 }
 .footer__social-icon {
   width: 1.8rem;
@@ -474,20 +685,67 @@ body a:active {
   margin-top: 1rem;
   font-weight: 700;
 }
+@media only screen and (min-width: 48rem) {
+  .footer__contact-name {
+    margin-top: 2.25rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .footer__contact-name {
+    margin-top: 2.25rem;
+  }
+}
 .footer__contact-company {
   font-weight: 700;
   margin-bottom: 1rem;
 }
+@media only screen and (min-width: 48rem) {
+  .footer__contact-company {
+    margin-bottom: 2.25rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .footer__contact-company {
+    margin-bottom: 2.25rem;
+  }
+}
 .footer__contact-email {
   margin: 1rem 0;
 }
+@media only screen and (min-width: 48rem) {
+  .footer__contact-email {
+    margin: 2.25rem 0;
+  }
+}
 .footer__logo {
   margin-top: 3rem;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
   text-align: left;
+}
+@media only screen and (min-width: 48rem) {
+  .footer__logo {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
+    text-align: left;
+    position: absolute;
+    position: absolute;
+    top: 0%;
+    left: calc(100% - 12rem);
+  }
 }
 .footer__copyright {
   margin: 1rem 0;
+}
+@media only screen and (min-width: 48rem) {
+  .footer__copyright {
+    margin: 2.25rem 0;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .footer__copyright {
+    margin: 2.25rem 0;
+  }
 }/*# sourceMappingURL=bio.css.map */
