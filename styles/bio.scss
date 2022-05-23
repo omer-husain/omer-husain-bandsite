@@ -143,7 +143,7 @@ body {
     height: 31.9rem;
   }
   @include mixins.devices(desktop) {
-    height: 60vh;
+    height: 40rem;
   }
   &__heading {
     font-size: 2.8rem;
