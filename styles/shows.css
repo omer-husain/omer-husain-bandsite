@@ -236,12 +236,26 @@ body a:active {
 }
 .shows .shows__col-heading {
   display: none;
-  width: 60%;
 }
 @media only screen and (min-width: 48rem) {
   .shows .shows__col-heading {
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+.shows .shows__col-row1 {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 48rem) {
+  .shows .shows__col-row1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    margin: 0 3rem;
   }
 }
 .shows__heading {
@@ -301,6 +315,19 @@ body a:active {
     justify-content: space-between;
   }
 }
+.shows__row {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 48rem) {
+  .shows__row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 3rem;
+  }
+}
 .shows__date {
   font-size: 1.1rem;
   font-weight: 700;
@@ -327,8 +354,11 @@ body a:active {
 }
 @media only screen and (min-width: 48rem) {
   .shows__button {
-    width: 25%;
+    width: 35%;
   }
+}
+.shows__button__button--hidden {
+  visibility: hidden;
 }
 .shows__button:hover {
   background-color: #000000;

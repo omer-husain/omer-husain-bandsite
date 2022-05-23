@@ -214,12 +214,24 @@ body {
 
   .shows__col-heading {
     display: none;
-    width: 60%;
     @include mixins.devices(tablet) {
+      width: 100%;
       display: flex;
-      justify-content: space-between;
+      flex-direction: row;
+      justify-content: space-evenly;
+      // margin: 0 3rem;
     }
-    @include mixins.devices(desktop) {
+  }
+
+  .shows__col-row1 {
+    display: flex;
+    flex-direction: column;
+    @include mixins.devices(tablet) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 3rem;
     }
   }
 
@@ -283,6 +295,18 @@ body {
     }
   }
 
+  &__row {
+    display: flex;
+    flex-direction: column;
+    @include mixins.devices(tablet) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 3rem;
+    }
+  }
+
   &__date {
     font-size: 1.1rem;
     font-weight: 700;
@@ -311,7 +335,11 @@ body {
     margin-bottom: 1rem;
 
     @include mixins.devices(tablet) {
-      width: 25%;
+      width: 35%;
+    }
+
+    &__button--hidden {
+      visibility: hidden;
     }
 
     &:hover {

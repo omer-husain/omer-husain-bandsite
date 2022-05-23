@@ -48,6 +48,14 @@ function createNodeEl(element, className, textContent, attributeObj) {
 
 function createShowCard(show) {
   const card = createNodeEl("article", "shows__card", null, null);
+
+  const cardHorizontalSection = createNodeEl(
+    "section",
+    "shows__row",
+    null,
+    null
+  );
+
   const dateHeading = createNodeEl("h3", "shows__sub-heading", "DATE", null);
   const dateValue = createNodeEl(
     "time",
@@ -74,15 +82,16 @@ function createShowCard(show) {
 
   const button = createNodeEl("button", "shows__button", "BUY TICKETS", null);
 
-  card.append(
+  cardHorizontalSection.append(
     dateHeading,
     dateValue,
     venueHeading,
     venueValue,
     locationHeading,
-    locationValue,
-    button
+    locationValue
   );
+
+  card.append(cardHorizontalSection, button);
 
   return card;
 }
