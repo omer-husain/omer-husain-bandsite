@@ -47,7 +47,7 @@ function createNodeEl(element, className, textContent, attributeObj) {
 //toLocalDateString
 
 function createShowCard(show) {
-  const card = createNodeEl("article", "shows__table", null, null);
+  const card = createNodeEl("article", "shows__card", null, null);
   const dateHeading = createNodeEl("h3", "shows__sub-heading", "DATE", null);
   const dateValue = createNodeEl(
     "time",

@@ -204,172 +204,23 @@ body {
   padding: 0 variables.$margin-mobile-LR;
   background-color: colours.$White;
 
-  &__heading {
-    color: colours.$Mercury;
-    font-size: map.get(m.$section-header, "text-size");
-    line-height: map.get(m.$section-header, "line-height");
-    font-weight: map.get(m.$section-header, "text-weight");
-    margin-top: variables.$margin-top-headline-mobile;
-    margin-bottom: variables.$margin-bottom-headline-mobile;
-    padding-top: variables.$margin-top-headline-mobile;
-  }
-
-  &__container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid colours.$Mercury;
-    justify-content: space-between;
-  }
-
-  &__card {
-    border-bottom: 1px solid colours.$Mercury;
-  }
-
-  &__date {
-    font-weight: 700;
-  }
-
-  &__button {
-    width: 100%;
-    font-size: map.get(m.$button-text, "text-size");
-    line-height: map.get(m.$button-text, "line-height");
-    font-weight: map.get(m.$button-text, "text-weight");
-    color: colours.$White;
-    background-color: colours.$BandSite-Black;
-    height: 40px;
-    border-radius: 4px;
-
-    &:hover {
-      background-color: colours.$BandSite-DarkBlack;
-    }
-  }
-}
-
-.about-musicians {
-  padding: 0 variables.$margin-mobile-LR;
-
-  @include mixins.devices(tablet) {
-    padding: 0 variables.$margin-tablet-LR * 2.5;
-  }
-
-  @include mixins.devices(desktop) {
-    padding: 0 variables.$margin-desktop-LR * 6;
-  }
-
-  &__heading {
-    padding: 0 variables.$margin-mobile-LR;
-    font-size: map.get(m.$section-header, "text-size");
-    line-height: map.get(m.$section-header, "line-height");
-    font-weight: map.get(m.$section-header, "text-weight");
-    margin-top: variables.$margin-top-headline-mobile;
-    margin-bottom: variables.$margin-bottom-headline-mobile;
-
-    @include mixins.devices(tablet) {
-      padding: 0 variables.$margin-tablet-LR;
-      font-size: map.get(t.$section-header, "text-size");
-      line-height: map.get(t.$section-header, "line-height");
-      font-weight: map.get(t.$section-header, "text-weight");
-      margin-top: variables.$margin-top-headline-tablet;
-      margin-bottom: variables.$margin-bottom-headline-tablet;
-    }
-
-    @include mixins.devices(desktop) {
-      padding: 0 variables.$margin-desktop-LR;
-      font-size: map.get(d.$section-header, "text-size");
-      line-height: map.get(d.$section-header, "line-height");
-      font-weight: map.get(d.$section-header, "text-weight");
-      margin-top: variables.$margin-top-headline-desktop;
-      margin-bottom: variables.$margin-bottom-headline-desktop;
-    }
-  }
-
-  &__image {
-    width: 100%;
-    margin-bottom: variables.$margin-bottom-headline-mobile;
-
-    @include mixins.devices(tablet) {
-      margin-bottom: variables.$margin-bottom-headline-tablet;
-    }
-
-    @include mixins.devices(desktop) {
-      margin-bottom: variables.$margin-bottom-headline-desktop;
-    }
-  }
-
-  &__quote {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: variables.$margin-bottom-headline-mobile;
-
-    @include mixins.devices(tablet) {
-      margin-bottom: variables.$margin-bottom-headline-tablet;
-    }
-  }
-
-  &__sub-heading {
-    font-size: map.get(m.$section-subheader, "text-size");
-    line-height: map.get(m.$section-subheader, "line-height");
-    font-weight: map.get(m.$section-subheader, "text-weight");
-    margin-bottom: variables.$margin-bottom-headline-mobile;
-
-    @include mixins.devices(tablet) {
-      font-size: map.get(t.$section-subheader, "text-size");
-      line-height: map.get(t.$section-subheader, "line-height");
-      font-weight: map.get(t.$section-subheader, "text-weight");
-      margin-bottom: variables.$margin-bottom-headline-tablet;
-    }
-
-    @include mixins.devices(desktop) {
-      font-size: map.get(d.$section-subheader, "text-size");
-      line-height: map.get(d.$section-subheader, "line-height");
-      font-weight: map.get(d.$section-subheader, "text-weight");
-      margin-bottom: variables.$margin-bottom-headline-desktop;
-    }
-  }
-
-  &__copy {
-    @include mixins.devices(tablet) {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  }
-
-  &__biography-paragraph {
-    font-size: map.get(m.$body-copy, "text-size");
-    line-height: map.get(m.$body-copy, "line-height");
-    font-weight: map.get(m.$body-copy, "text-weight");
-    margin-bottom: variables.$margin-bottom-headline-mobile;
-
-    @include mixins.devices(tablet) {
-      width: 48%;
-      font-size: map.get(t.$body-copy, "text-size");
-      line-height: map.get(t.$body-copy, "line-height");
-      font-weight: map.get(t.$body-copy, "text-weight");
-      margin-bottom: variables.$margin-bottom-headline-tablet;
-    }
-
-    @include mixins.devices(desktop) {
-      width: 48%;
-      font-size: map.get(d.$body-copy, "text-size");
-      line-height: map.get(d.$body-copy, "line-height");
-      font-weight: map.get(d.$body-copy, "text-weight");
-      margin-bottom: variables.$margin-bottom-headline-desktop;
-    }
-  }
-}
-
-.photo-gallery {
-  padding: 0 variables.$margin-mobile-LR;
-  background-color: colours.$Alabaster;
-
   @include mixins.devices(tablet) {
     padding: 0 variables.$margin-tablet-LR;
   }
 
   @include mixins.devices(desktop) {
     padding: 0 variables.$margin-desktop-LR;
+  }
+
+  .shows__col-heading {
+    display: none;
+    width: 60%;
+    @include mixins.devices(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include mixins.devices(desktop) {
+    }
   }
 
   &__heading {
@@ -399,211 +250,73 @@ body {
     }
   }
 
-  &__image-container {
+  &__sub-heading {
+    color: colours.$Silver;
+    margin: 1rem 0;
     @include mixins.devices(tablet) {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: none;
     }
   }
 
-  &__image {
+  &__container {
     width: 100%;
-    margin-bottom: variables.$margin-mobile-between-components;
-
-    @include mixins.devices(tablet) {
-      width: 30%;
-      margin: 1.2vw;
-    }
-  }
-}
-
-.write-comments {
-  padding: 0 variables.$margin-mobile-LR;
-  background-color: colours.$White;
-
-  font-size: map.get(m.$body-copy, "text-size");
-  line-height: map.get(m.$body-copy, "line-height");
-  font-weight: map.get(m.$body-copy, "text-weight");
-
-  @include mixins.devices(tablet) {
-    padding: 0 variables.$margin-tablet-LR * 5;
-    font-size: map.get(t.$body-copy, "text-size");
-    line-height: map.get(t.$body-copy, "line-height");
-    font-weight: map.get(t.$body-copy, "text-weight");
-  }
-
-  @include mixins.devices(desktop) {
-    padding: 0 variables.$margin-desktop-LR * 10;
-    font-size: map.get(d.$body-copy, "text-size");
-    line-height: map.get(d.$body-copy, "line-height");
-    font-weight: map.get(d.$body-copy, "text-weight");
-  }
-
-  &__heading {
-    font-size: map.get(m.$section-header, "text-size");
-    line-height: map.get(m.$section-header, "line-height");
-    font-weight: map.get(m.$section-header, "text-weight");
-    margin-top: variables.$margin-top-headline-mobile;
-    margin-bottom: variables.$margin-bottom-headline-mobile;
-    padding-top: variables.$margin-top-headline-mobile;
-
-    @include mixins.devices(tablet) {
-      font-size: map.get(t.$section-header, "text-size");
-      line-height: map.get(t.$section-header, "line-height");
-      font-weight: map.get(t.$section-header, "text-weight");
-      margin-top: variables.$margin-top-headline-tablet;
-      margin-bottom: variables.$margin-bottom-headline-tablet;
-      padding-top: variables.$margin-top-headline-tablet;
-    }
-  }
-
-  &__form-container {
-    width: 100%;
-    display: flex;
-    border-bottom: 1px solid colours.$Mercury;
-    justify-content: space-between;
-  }
-
-  &__col1-image {
-    width: 15%;
-  }
-  &__avatar {
-    width: 100%;
-    border-radius: 50%;
-  }
-
-  &__col2-form {
-    width: 75%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-  }
-
-  &__form-label {
-    margin-bottom: 4px;
-    color: colours.$Mercury;
-  }
-
-  &__input-name {
-    width: 100%;
-    border-radius: 4px;
-    padding: 4px;
-    border: 1px solid colours.$Mercury;
-    margin-bottom: 1.2rem;
-    font-size: map.get(m.$body-copy, "text-size");
-    line-height: map.get(m.$body-copy, "line-height");
-    font-weight: map.get(m.$body-copy, "text-weight");
+    border-bottom: 1px solid colours.$Mercury;
+    justify-content: space-between;
 
     @include mixins.devices(tablet) {
-      font-size: map.get(t.$body-copy, "text-size");
-      line-height: map.get(t.$body-copy, "line-height");
-      font-weight: map.get(t.$body-copy, "text-weight");
-    }
-
-    &:active {
-      border: 1px solid colours.$BandSite-Black;
-    }
-
-    &:hover {
     }
   }
 
-  &__comment-area {
-    width: 100%;
-    border-radius: 4px;
-    padding: 4px;
-    border: 1px solid colours.$Mercury;
-    height: 5rem;
-    resize: none;
-    margin-bottom: 1.2rem;
-    font-size: map.get(m.$body-copy, "text-size");
-    line-height: map.get(m.$body-copy, "line-height");
-    font-weight: map.get(m.$body-copy, "text-weight");
+  &__card {
+    margin: 0.5rem 0;
+    border-bottom: 1px solid colours.$Mercury;
 
     @include mixins.devices(tablet) {
-      font-size: map.get(t.$body-copy, "text-size");
-      line-height: map.get(t.$body-copy, "line-height");
-      font-weight: map.get(t.$body-copy, "text-weight");
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      // margin: 0 2rem;
+      justify-content: space-between;
     }
   }
+
+  &__date {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  &__venue {
+    @include mixins.devices(tablet) {
+      text-align: left;
+    }
+  }
+
+  &__location {
+    margin: 1rem 0;
+  }
+
   &__button {
+    padding: 0.5rem;
+    width: 100%;
     font-size: map.get(m.$button-text, "text-size");
     line-height: map.get(m.$button-text, "line-height");
     font-weight: map.get(m.$button-text, "text-weight");
     color: colours.$White;
     background-color: colours.$BandSite-Black;
-    height: 40px;
-    border-radius: 4px;
+    height: 3.5rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+
+    @include mixins.devices(tablet) {
+      width: 25%;
+    }
 
     &:hover {
       background-color: colours.$BandSite-DarkBlack;
     }
-  }
-}
-
-.display-comments {
-  padding: 0 variables.$margin-mobile-LR;
-  background-color: colours.$White;
-
-  font-size: map.get(m.$body-copy, "text-size");
-  line-height: map.get(m.$body-copy, "line-height");
-  font-weight: map.get(m.$body-copy, "text-weight");
-
-  @include mixins.devices(tablet) {
-    padding: 0 variables.$margin-tablet-LR * 5;
-    font-size: map.get(t.$body-copy, "text-size");
-    line-height: map.get(t.$body-copy, "line-height");
-    font-weight: map.get(t.$body-copy, "text-weight");
-  }
-
-  @include mixins.devices(desktop) {
-    padding: 0 variables.$margin-desktop-LR * 10;
-    font-size: map.get(d.$body-copy, "text-size");
-    line-height: map.get(d.$body-copy, "line-height");
-    font-weight: map.get(d.$body-copy, "text-weight");
-  }
-
-  &__card {
-    width: 100%;
-    display: flex;
-    border-bottom: 1px solid colours.$Mercury;
-    justify-content: space-between;
-  }
-
-  &__card-col1 {
-    width: 20%;
-  }
-
-  &__avatar {
-    width: 100%;
-    border-radius: 50%;
-  }
-
-  &__card-col2 {
-    height: 15rem;
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-
-    @include mixins.devices(tablet) {
-      height: 16rem;
-    }
-  }
-
-  &__heading-row {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__likes-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__card-header {
-    display: inline-block;
   }
 }
 

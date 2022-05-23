@@ -220,8 +220,8 @@ body a:active {
 }
 .shows__button {
   width: 100%;
-  font-size: 0.625rem;
-  line-height: 1.25rem;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
   font-weight: 700;
   color: #ffffff;
   background-color: #323232;
@@ -516,8 +516,8 @@ body a:active {
   }
 }
 .write-comments__button {
-  font-size: 0.625rem;
-  line-height: 1.25rem;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
   font-weight: 700;
   color: #ffffff;
   background-color: #323232;
