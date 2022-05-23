@@ -1,7 +1,5 @@
 @use "./variables";
-@use "./mobile-styles";
-@use "./tablet-styles";
-@use "./desktop-styles";
+
 
 @mixin devices($breakpoint) {
   @if $breakpoint == tablet {

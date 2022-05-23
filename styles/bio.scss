@@ -437,7 +437,7 @@ body {
   }
 
   &__col1-image {
-    width: 15%;
+    width: 18%;
   }
   &__avatar {
     width: 100%;
@@ -540,6 +540,7 @@ body {
     display: flex;
     border-bottom: 1px solid colours.$Mercury;
     justify-content: space-between;
+    margin: 2rem 0;
   }
 
   &__card-col1 {
@@ -547,8 +548,9 @@ body {
   }
 
   &__avatar {
-    width: 100%;
+    width: 75%;
     border-radius: 50%;
+    margin: auto 0;
   }
 
   &__card-col2 {
@@ -559,21 +561,33 @@ body {
     justify-content: space-evenly;
 
     @include mixins.devices(tablet) {
-      height: 15rem;
+      height: 18rem;
     }
   }
 
-  &__heading-row {
+  &__heading-row1 {
     display: flex;
     justify-content: space-between;
+    margin: 1rem 0;
   }
 
-  &__likes-row {
+  &__heading-row2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin: 1rem 0;
   }
   &__card-header {
     display: inline-block;
+  }
+
+  &__like-button {
+    margin: 0 1rem;
+  }
+  &__likes-counter {
+    margin: 0 1rem;
+  }
+  &__delete-button {
+    margin: 0 0 0 1rem;
   }
 }
 

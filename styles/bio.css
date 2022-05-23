@@ -460,7 +460,7 @@ body a:active {
   justify-content: space-between;
 }
 .write-comments__col1-image {
-  width: 15%;
+  width: 18%;
 }
 .write-comments__avatar {
   width: 100%;
@@ -556,13 +556,15 @@ body a:active {
   display: flex;
   border-bottom: 1px solid #e1e1e1;
   justify-content: space-between;
+  margin: 2rem 0;
 }
 .display-comments__card-col1 {
   width: 20%;
 }
 .display-comments__avatar {
-  width: 100%;
+  width: 75%;
   border-radius: 50%;
+  margin: auto 0;
 }
 .display-comments__card-col2 {
   height: 90%;
@@ -573,19 +575,30 @@ body a:active {
 }
 @media only screen and (min-width: 48rem) {
   .display-comments__card-col2 {
-    height: 15rem;
+    height: 18rem;
   }
 }
-.display-comments__heading-row {
+.display-comments__heading-row1 {
   display: flex;
   justify-content: space-between;
+  margin: 1rem 0;
 }
-.display-comments__likes-row {
+.display-comments__heading-row2 {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  margin: 1rem 0;
 }
 .display-comments__card-header {
   display: inline-block;
+}
+.display-comments__like-button {
+  margin: 0 1rem;
+}
+.display-comments__likes-counter {
+  margin: 0 1rem;
+}
+.display-comments__delete-button {
+  margin: 0 0 0 1rem;
 }
 
 .footer {

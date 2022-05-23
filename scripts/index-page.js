@@ -43,17 +43,25 @@ function createCommentCard(comment) {
   const card = createNodeEl("article", "display-comments__card", null, null);
   const cardCol1 = createNodeEl("section", "display-comments__card-col1");
   const cardAvatar = createNodeEl("img", "display-comments__avatar", null, {
-    src: "./assets/images/Mohan-muruge.jpg",
+    src: "./assets/images/grey1.png",
     alt: "user avatar",
   });
 
   const cardCol2 = createNodeEl("section", "display-comments__card-col2");
-  const cardCol2Row = createNodeEl(
+
+  const cardCol2Row1 = createNodeEl(
     "section",
-    "display-comments__heading-row",
+    "display-comments__heading-row1",
     null,
     null
   );
+  const cardCol2Row2 = createNodeEl(
+    "section",
+    "display-comments__heading-row2",
+    null,
+    null
+  );
+
   const cardHeader = createNodeEl(
     "h3",
     "display-comments__card-header",
@@ -105,14 +113,10 @@ function createCommentCard(comment) {
 
   card.append(cardCol1, cardCol2);
   cardCol1.append(cardAvatar);
-  cardCol2.append(cardCol2Row, commentText);
-  cardCol2Row.append(
-    cardHeader,
-    cardDate,
-    likebutton,
-    likesCounter,
-    deleteButton
-  );
+  cardCol2.append(cardCol2Row1, commentText, cardCol2Row2);
+  cardCol2Row1.append(cardHeader, cardDate);
+
+  cardCol2Row2.append(likebutton, likesCounter, deleteButton);
   return card;
 }
 
@@ -169,8 +173,6 @@ function displayComments(comments) {
     displayComment(comment);
   }
 }
-
-// PUT /comments/:id/like
 
 function incrementLike(commentId) {
   let likeQuery = `${BASE_URL}/comments/${commentId}/like${apiParameter}`;
